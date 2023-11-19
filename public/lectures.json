@@ -1,0 +1,74 @@
+[
+    {
+        "_id": 1,
+        "video": "https://www.youtube.com/embed/7YgGrqXz7oQ?si=izzsqhw5GdQklfqE",
+        "title": "3X3 Inverse Matrix Shortcut | ইনভার্স ম্যাট্রিক্স | HSC | Higher Math 1st paper |",
+        "playlist": "Math"
+    },
+    {
+        "_id": 2,
+        "video": "https://www.youtube.com/embed/m1Hhz9rW2nw?si=c2zBWVYJzLJHu33e",
+        "title": "ইনভার্স ম্যাট্রিক্স নির্ণয় | 2x2 Inverse Matrix Shortcut | MATHEMATICS 1ST PAPER | HSC",
+        "playlist": "Math"
+    },
+    {
+        "_id": 3,
+        "video": "https://www.youtube.com/embed/8Pi9sAy8Bdo?si=MqYl4RMobVW4xbxm",
+        "title": "Changing Voice | Lecture -01 | SSC | HSC | Grammar | English",
+        "playlist": "English"
+    },
+    {
+        "_id": 4,
+        "video": "https://www.youtube.com/embed/EozM-YMJ-vc?si=FT22sVO8DssGPK49",
+        "title": "Changing Voice | Lecture -02 | SSC | HSC | Grammer | English",
+        "playlist": "English"
+    },
+    {
+        "_id": 5,
+        "video": "https://www.youtube.com/embed/6abUoBdLjM4?si=FuNeohMjjoNX9sV4",
+        "title": "অর্থের সময় মূল্য | TIME VALUE OF MONEY | সুত্র ব্যবহারের কৌশল | ফিন্যান্স ও ব্যাংকিং ১ম পত্র | HSC |",
+        "playlist": "Finance & Banking"
+    },
+    {
+        "_id": 6,
+        "video": "https://www.youtube.com/embed/KQj982Gabq8?si=DuvbXeoJFb3upTXE",
+        "title": "অর্থের সময় মূল্য | TIME VALUE OF MONEY | Part-02 | ফিন্যান্স ও ব্যাংকিং ১ম পত্র | HSC |",
+        "playlist": "Finance & Banking"
+    },
+    {
+        "_id": 7,
+        "video": "https://www.youtube.com/embed/i8b2YbhXjL4?si=dcsmQQqHDWC_bq35",
+        "title": "Quantum Number | কোয়ান্টাম সংখ্যা | Chemistry 1st paper | HSC | Science",
+        "playlist": "Chemistry"
+    },
+    {
+        "_id": 8,
+        "video": "https://www.youtube.com/embed/SXu509dX8tY?si=D0H12NXdKS1DiKIy",
+        "title": "কোয়ান্টাম সংখ্যা থেকে কিভাবে মৌল নির্ণয় করবে? | QUANTUM NUMBER | CHEMISTRY | HSC",
+        "playlist": "Chemistry"
+    },
+    {
+        "_id": 9,
+        "video": "https://www.youtube.com/embed/bka9sUd_yhI?si=BNXEAdAJXgGLqYCG",
+        "title": "জারণ বিজারণ বিক্রিয়া সমতাকরণ | রসায়ন ২য় পত্র | Chemistry 2nd Paper| HSC",
+        "playlist": "Chemistry"
+    },
+    {
+        "_id": 10,
+        "video": "https://www.youtube.com/embed/7bG9PHjUSbU?si=1PJ3MGG-bDnmwwNd",
+        "title": "জারণ বিজারণ বিক্রিয়া সমতাকরণ-০২ | শর্টকাট | Chemistry 2nd Paper | HSC",
+        "playlist": "Chemistry"
+    },
+    {
+        "_id": 11,
+        "video": "https://www.youtube.com/embed/GGkf14xILRU?si=hQ1l8pdArw4_A1dZ",
+        "title": "জারণ বিজারণ বিক্রিয়া সমতাকরণ শর্টকাট-০৩ | Chemistry 2nd Paper | HSC",
+        "playlist": "Chemistry"
+    },
+    {
+        "_id": 12,
+        "video": "https://www.youtube.com/embed/tp5so8NNt38?si=5_tghW09Hja8ZUdl",
+        "title": "How to write a user interactive C Program",
+        "playlist": "I.C.T"
+    }
+]
