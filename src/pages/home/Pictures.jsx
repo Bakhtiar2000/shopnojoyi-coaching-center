@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PictureBox from './PictureBox';
 
 const Pictures = () => {
     const [photos, setPhotos]= useState([])
@@ -9,18 +10,21 @@ const Pictures = () => {
         .then(data=> setPhotos(data))
     }, [])
     return (
-        <div className='container mt-20'>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl mb-10 text-center text-primary'>ফটো গ্যালারি</h2>
+        <div className='relative bg-[url("https://img.freepik.com/premium-vector/simple-pattern-transparent-background-theme-school-learning-education_576736-30.jpg?w=1800")] bg-cover bg-center bg-no-repeat'>
+            <div className='absolute bg-white h-full w-full opacity-50'></div>
+            <div className='bg-title/5'>
+                <div className='container py-20'>
+                    <h2 className='absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl md:text-4xl lg:text-5xl mb-10 text-primary w-max'>ফটো গ্যালারি</h2>
 
-                <div className='grid xl:grid-cols-2 gap-8 mb-8'>
-                {
-                    photos?.map(photo=> 
-                    <div key={photo?._id} className='mx-auto'>
-                        <img className='w-[600px] h-[300px] object-cover object-center duration-300 rounded hover:shadow-xl hover:shadow-title/30' src={photo?.img} alt="" />
-                    </div>    
-                    )
-                }
+                    <div className='grid xl:grid-cols-2 gap-8 mt-20'>
+                    {
+                        photos?.map(photo=> 
+                        <PictureBox key={photo?._id} photo={photo}></PictureBox>    
+                        )
+                    }
+                    </div>
                 </div>
+            </div>
         </div>
     );
 };

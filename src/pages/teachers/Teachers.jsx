@@ -16,7 +16,7 @@ const Teachers = () => {
              <Helmet>
                 <title>শিক্ষকসমূহ - স্বপ্নজয়ী</title>
             </Helmet>
-            <Breadcrumbs bg="https://i.ibb.co/KXcRw8D/314687788-558362672961148-1820664537336077308-n.jpg" title="মানুষ গড়ার কারিগর" />
+            <Breadcrumbs bg="https://i.ibb.co/KXcRw8D/314687788-558362672961148-1820664537336077308-n.jpg" title="Our Teachers" />
 
             <div className='flex flex-wrap justify-center gap-10 mt-20'>
             {

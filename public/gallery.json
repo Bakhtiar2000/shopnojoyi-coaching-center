@@ -1,18 +1,22 @@
 [
     {
         "_id": 1,
-        "img": "https://i.ibb.co/h1QK0sX/314590035-558362542961161-5832065226883642146-n.jpg"
+        "img": "https://i.ibb.co/h1QK0sX/314590035-558362542961161-5832065226883642146-n.jpg",
+        "description": "মাসিক পরীক্ষায় শিক্ষার্থীদের উপহার বিতরণ "
     },
     {
         "_id": 2,
-        "img": "https://i.ibb.co/bvFR7KX/c5.jpg"
+        "img": "https://i.ibb.co/bvFR7KX/c5.jpg",
+        "description": "৬ষ্ঠ বছর পূর্তী উপলক্ষে অনুষ্ঠানে আমরা"
     },
     {
         "_id": 3,
-        "img": "https://i.ibb.co/cNrsJ55/c3.jpg"
+        "img": "https://i.ibb.co/cNrsJ55/c3.jpg",
+        "description": "দক্ষিণ খান শাখায় প্রথম দিনে আমাদের একাংশ"
     },
     {
         "_id": 4,
-        "img": "https://i.ibb.co/YPPqNHR/c4.jpg"
+        "img": "https://i.ibb.co/QftyhY6/386594944-819383086859104-3288557544632079581-n.jpg",
+        "description": "ক্লাসচলাকালীন আমাদের একাগ্র শিক্ষার্থীদের একাংশ"
     }
 ]

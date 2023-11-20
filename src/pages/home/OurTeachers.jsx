@@ -22,7 +22,7 @@ const OurTeachers = () => {
       };
 
     return (
-        <div className='container mt-20'>
+        <div className='container py-20'>
             <h2 className='text-3xl md:text-4xl lg:text-5xl mb-10 text-center text-primary'>আমাদের শিক্ষকগণ</h2>
             <Swiper
                 spaceBetween={30}

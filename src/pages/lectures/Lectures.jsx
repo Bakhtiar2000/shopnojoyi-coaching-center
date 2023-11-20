@@ -21,12 +21,12 @@ const Lectures = () => {
              <Helmet>
                 <title>লেকচারসমূহ - স্বপ্নজয়ী</title>
             </Helmet>
-            <Breadcrumbs bg="https://img.freepik.com/free-vector/school-children-attending-distance-class-monitors-desks-classroom-screen-view_74855-15518.jpg?w=1380&t=st=1700408511~exp=1700409111~hmac=b5d0619ba203da690edb83cdba57027500575fed726f2fe10449baaa085783d6" title="অনলাইন লেকচারসমূহ" />
+            <Breadcrumbs bg="https://img.freepik.com/free-vector/school-children-attending-distance-class-monitors-desks-classroom-screen-view_74855-15518.jpg?w=1380&t=st=1700408511~exp=1700409111~hmac=b5d0619ba203da690edb83cdba57027500575fed726f2fe10449baaa085783d6" title="Online Lectures" />
 
             <div className='mt-10'>
 
                 {/* Math */}
-                <div>
+                <div className='bg-title/10 px-10 py-6'>
                     <h2 className='text-3xl md:text-4xl text-primary font-semibold mb-10'>📐 গণিত</h2>
                     <div className='flex flex-wrap gap-10'>
                     {
@@ -37,11 +37,11 @@ const Lectures = () => {
                         </div>)
                     }
                     </div>
-                    <p className='border border-primary w-full mt-5'></p>
+                    
                 </div>
 
                 {/* English */}
-                <div className='mt-10'>
+                <div className='mt-10 px-10 py-6'>
                     <h2 className='text-3xl md:text-4xl text-primary font-semibold mb-10'>📖 ইংরেজি</h2>
                     <div className='flex flex-wrap gap-10'>
                     {
@@ -52,11 +52,11 @@ const Lectures = () => {
                         </div>)
                     }
                     </div>
-                    <p className='border border-primary w-full mt-5'></p>
+                    
                 </div>
 
                 {/* Finance & Banking */}
-                <div className='mt-10'>
+                <div className='mt-10 bg-bg/10 px-10 py-6'>
                     <h2 className='text-3xl md:text-4xl text-primary font-semibold mb-10'>📊 ফাইন্যান্স এন্ড ব্যাংকিং</h2>
                     <div className='flex flex-wrap gap-10'>
                     {
@@ -67,11 +67,11 @@ const Lectures = () => {
                         </div>)
                     }
                     </div>
-                    <p className='border border-primary w-full mt-5'></p>
+                    
                 </div>
 
                 {/* Chemistry */}
-                <div className='mt-10'>
+                <div className='mt-10 px-10 py-6'>
                     <h2 className='text-3xl md:text-4xl text-primary font-semibold mb-10'>🧪 রসায়ন</h2>
                     <div className='flex flex-wrap gap-10'>
                     {
@@ -82,11 +82,11 @@ const Lectures = () => {
                         </div>)
                     }
                     </div>
-                    <p className='border border-primary w-full mt-5'></p>
+                    
                 </div>
 
                 {/* ICT */}
-                <div className='mt-10'>
+                <div className='mt-10 bg-primary/5 px-10 py-6'>
                     <h2 className='text-3xl md:text-4xl text-primary font-semibold mb-10'>💻 আই.সি.টি.</h2>
                     <div className='flex flex-wrap gap-10'>
                     {

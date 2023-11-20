@@ -5,12 +5,12 @@ import { BiCurrentLocation } from "react-icons/bi";
 
 const ContactInfo = () => {
     return (
-        <section className="container mt-20">
+        <section className="container pt-16">
             <div className="flex justify-center items-center flex-wrap gap-5 md:gap-8 lg:gap-10">
 
                 {/* Address */}
-                <div className="w-60 h-72 rounded-lg p-5 duration-300 bg-bg/10 hover:shadow-xl">
-                    <div className="p-5 bg-bg/50 rounded-lg w-fit mx-auto mt-5">
+                <div className="w-60 h-72 rounded-lg p-5 duration-300 bg-white border border-title hover:shadow-xl">
+                    <div className="p-5 bg-primary/10 rounded-lg w-fit mx-auto mt-5">
                     <BiCurrentLocation className="text-4xl text-dark" />
                     </div>
                     <p className="text-center text-2xl font-semibold mt-5 mb-3">
@@ -22,8 +22,8 @@ const ContactInfo = () => {
                 </div>
 
                 {/* Phone number */}
-                <div className="w-60 h-72 rounded-lg p-5 duration-300 bg-bg/10 hover:shadow-xl">
-                    <div className="p-5 bg-bg/50 rounded-lg w-fit mx-auto mt-5">
+                <div className="w-60 h-72 rounded-lg p-5 duration-300 bg-white border border-title hover:shadow-xl">
+                    <div className="p-5 bg-primary/10 rounded-lg w-fit mx-auto mt-5">
                     <BsTelephone className="text-4xl text-dark" />
                     </div>
                     <p className="text-center text-2xl font-semibold mt-5 mb-3">
@@ -35,8 +35,8 @@ const ContactInfo = () => {
                 </div>
 
                 {/* Email address */}
-                <div className="w-60 h-72 rounded-lg p-5 duration-300 bg-bg/10 hover:shadow-xl">
-                    <div className="p-5 bg-bg/50 rounded-lg w-fit mx-auto mt-5">
+                <div className="w-60 h-72 rounded-lg p-5 duration-300 bg-white border border-title hover:shadow-xl">
+                    <div className="p-5 bg-primary/10 rounded-lg w-fit mx-auto mt-5">
                     <AiOutlineMail className="text-4xl text-dark" />
                     </div>
                     <p className="text-center text-2xl font-semibold mt-5 mb-3">

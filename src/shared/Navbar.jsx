@@ -22,7 +22,7 @@ const Navbar = () => {
     }, []);
     
     return (
-        <div className={`fixed w-full px-5 py-3 z-50 bg-white ${navState ? 'border-b border-primary ' : ''}`}>
+        <div className={`fixed w-full px-5 py-3 z-50 bg-white ${navState ? 'border-b border-title ' : ''}`}>
 
             <div className='container  flex justify-between gap-5 items-center '>
                 {/* Logo nad name */}
