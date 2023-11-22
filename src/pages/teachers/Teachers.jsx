@@ -29,7 +29,7 @@ const Teachers = () => {
                         <p className='text-2xl text-title mb-3'>{teacher?.name} {teacher?.position && `(${teacher?.position})`}</p>
                         <p className='mb-1'>{teacher?.education}</p>
                         {
-                            teacher?.classes?.map((singleClass, index)=> <span key={index} >
+                            teacher?.classes?.map((singleClass, index)=> <span className='text-primary' key={index} >
                                 {singleClass} {index !== teacher.classes.length - 1 && ', '}
                             </span>)
                         }
