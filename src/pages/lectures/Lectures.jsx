@@ -30,7 +30,7 @@ const Lectures = () => {
 
                 {/* Math */}
                 <div className='mt-10 bg-title/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>📐 গণিত</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📐 গণিত</h2>
                     <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
                     {
                         mathLecture?.map(lecture=> 
@@ -44,7 +44,7 @@ const Lectures = () => {
 
                 {/* English */}
                 <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>📖 ইংরেজি</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📖 ইংরেজি</h2>
                     <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
                     {
                         englishLecture?.map(lecture=> 
@@ -58,7 +58,7 @@ const Lectures = () => {
 
                 {/* Finance & Banking */}
                 <div className='mt-10 bg-bg/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>📊 ফাইন্যান্স এন্ড ব্যাংকিং</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📊 ফাইন্যান্স এন্ড ব্যাংকিং</h2>
                     <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
                     {
                         financeLecture?.map(lecture=> 
@@ -72,7 +72,7 @@ const Lectures = () => {
 
                 {/* Chemistry */}
                 <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>🧪 রসায়ন</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>🧪 রসায়ন</h2>
                     <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
                     {
                         renderedChemistryLecture?.map(lecture=> 
@@ -89,7 +89,7 @@ const Lectures = () => {
 
                 {/* ICT */}
                 <div className='mt-10 bg-primary/5 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>💻 আই.সি.টি.</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>💻 আই.সি.টি.</h2>
                     <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
                     {
                         ictLecture?.map(lecture=> 

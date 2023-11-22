@@ -46,7 +46,7 @@ const Programs = () => {
 
                 {/* এইচ.এস.সি মডেল টেস্ট */}
                 <div className='mt-10 bg-title/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>এইচ.এস.সি মডেল টেস্ট</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-5 md:mb-8'>এইচ.এস.সি মডেল টেস্ট</h2>
                     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-6 duration-300 md:gap-10'>
                     {
                         renderedHscModelTest?.map(program=> 
@@ -56,16 +56,16 @@ const Programs = () => {
                     }
                     </div>
                     {
-                        hscModelTest?.length>2 && !showHscModelTest && <div className='flex justify-center'><button onClick={()=> setShowHscModelTest(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See more</button></div>
+                        hscModelTest?.length>2 && !showHscModelTest && <div className='flex justify-center'><button onClick={()=> setShowHscModelTest(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show more</button></div>
                     }
                     {
-                        hscModelTest?.length>2 && showHscModelTest && <div className='flex justify-center'><button onClick={()=> setShowHscModelTest(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See less</button></div>
+                        hscModelTest?.length>2 && showHscModelTest && <div className='flex justify-center'><button onClick={()=> setShowHscModelTest(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show less</button></div>
                     }
                 </div>
                 
                 {/* এস.এস.সি মডেল টেস্ট */}
                 <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>এস.এস.সি মডেল টেস্ট</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-5 md:mb-8'>এস.এস.সি মডেল টেস্ট</h2>
                     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-6 duration-300 md:gap-10'>
                     {
                         renderedSscModelTest?.map(program=> 
@@ -75,16 +75,16 @@ const Programs = () => {
                     }
                     </div>
                     {
-                        sscModelTest?.length>2 && !showSscModelTest && <div className='flex justify-center'><button onClick={()=> setShowSscModelTest(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See more</button></div>
+                        sscModelTest?.length>2 && !showSscModelTest && <div className='flex justify-center'><button onClick={()=> setShowSscModelTest(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show more</button></div>
                     }
                     {
-                        sscModelTest?.length>2 && showSscModelTest && <div className='flex justify-center'><button onClick={()=> setShowSscModelTest(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See less</button></div>
+                        sscModelTest?.length>2 && showSscModelTest && <div className='flex justify-center'><button onClick={()=> setShowSscModelTest(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show less</button></div>
                     }
                 </div>
                 
                 {/* দক্ষিনখান শাখায় প্রথম দিন */}
                 <div className='mt-10 bg-bg/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>দক্ষিনখান শাখায় প্রথম দিন</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-5 md:mb-8'>দক্ষিনখান শাখায় প্রথম দিন</h2>
                     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-6 duration-300 md:gap-10'>
                     {
                         renderedDakshinkhanFirstDay?.map(program=> 
@@ -94,16 +94,16 @@ const Programs = () => {
                     }
                     </div>
                     {
-                        dakshinkhanFirstDay?.length>2 && !showDakshinkhanFirstDay && <div className='flex justify-center'><button onClick={()=> setShowDakshinkhanFirstDay(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See more</button></div>
+                        dakshinkhanFirstDay?.length>2 && !showDakshinkhanFirstDay && <div className='flex justify-center'><button onClick={()=> setShowDakshinkhanFirstDay(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show more</button></div>
                     }
                     {
-                        dakshinkhanFirstDay?.length>2 && showDakshinkhanFirstDay && <div className='flex justify-center'><button onClick={()=> setShowDakshinkhanFirstDay(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See less</button></div>
+                        dakshinkhanFirstDay?.length>2 && showDakshinkhanFirstDay && <div className='flex justify-center'><button onClick={()=> setShowDakshinkhanFirstDay(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show less</button></div>
                     }
                 </div>
 
                 {/* প্রথম ৭ দিনের ডেমো ক্লাস */}
                 <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>প্রথম ৭ দিনের ডেমো ক্লাস</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-5 md:mb-8'>প্রথম ৭ দিনের ডেমো ক্লাস</h2>
                     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-6 duration-300 md:gap-10'>
                     {
                         renderedDemoClass?.map(program=> 
@@ -113,16 +113,16 @@ const Programs = () => {
                     }
                     </div>
                     {
-                        demoClass?.length>2 && !showDemoClass && <div className='flex justify-center'><button onClick={()=> setShowDemoClass(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See more</button></div>
+                        demoClass?.length>2 && !showDemoClass && <div className='flex justify-center'><button onClick={()=> setShowDemoClass(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show more</button></div>
                     }
                     {
-                        demoClass?.length>2 && showDemoClass && <div className='flex justify-center'><button onClick={()=> setShowDemoClass(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See less</button></div>
+                        demoClass?.length>2 && showDemoClass && <div className='flex justify-center'><button onClick={()=> setShowDemoClass(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show less</button></div>
                     }
                 </div>
 
                 {/* মাসিক পরীক্ষা */}
                 <div className='mt-10 bg-primary/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>মাসিক পরীক্ষা</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-5 md:mb-8'>মাসিক পরীক্ষা</h2>
                     <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-6 duration-300 md:gap-10'>
                     {
                         renderedMonthlyExam?.map(program=> 
@@ -132,16 +132,16 @@ const Programs = () => {
                     }
                     </div>
                     {
-                        monthlyExam?.length>2 && !showMonthlyExam && <div className='flex justify-center'><button onClick={()=> setShowMonthlyExam(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See more</button></div>
+                        monthlyExam?.length>2 && !showMonthlyExam && <div className='flex justify-center'><button onClick={()=> setShowMonthlyExam(true)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show more</button></div>
                     }
                     {
-                        monthlyExam?.length>2 && showMonthlyExam && <div className='flex justify-center'><button onClick={()=> setShowMonthlyExam(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>See less</button></div>
+                        monthlyExam?.length>2 && showMonthlyExam && <div className='flex justify-center'><button onClick={()=> setShowMonthlyExam(false)} className='py-1 px-3 bg-primary rounded shadow-lg text-white mt-5'>Show less</button></div>
                     }
                 </div>
 
                 {/* রমাদান সাহায্য */}
                 <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-primary font-semibold mb-6 md:mb-10'>রমাদান সাহায্য</h2>
+                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-5 md:mb-8'>রমাদান সাহায্য</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 duration-300 md:gap-10'>
                     {
                         ramadanHelp?.map(program=> 

@@ -23,7 +23,7 @@ const OurTeachers = () => {
 
     return (
         <div className='container py-20'>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl mb-10 text-center text-primary'>আমাদের শিক্ষকগণ</h2>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl mb-10 text-center text-title'>আমাদের শিক্ষকগণ</h2>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -47,7 +47,7 @@ const OurTeachers = () => {
                                 <img className='w-96 lg:w-[520px] mx-auto rounded shadow-xl hover:shadow-title/50 duration-300' src={teacher?.img} alt={teacher?.name} />
 
                                 <div className='mt-5 md:mt-0'>
-                                    <p className='text-2xl lg:text-3xl duration-300 text-title mb-3'>{teacher?.name} {teacher?.position && `(${teacher?.position})`}</p>
+                                    <p className='text-2xl lg:text-3xl duration-300 text-primary mb-3'>{teacher?.name} {teacher?.position && `(${teacher?.position})`}</p>
                                     <p className='mb-1'>{teacher?.education}</p>
                                     {
                                         teacher?.classes?.map((singleClass, index)=> <span key={index} >

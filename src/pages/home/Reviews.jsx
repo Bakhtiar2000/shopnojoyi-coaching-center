@@ -11,7 +11,7 @@ const Reviews = () => {
 
     return (
         <div className='container py-20'>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl mb-10 text-center text-primary'>শিক্ষার্থীদের মন্তব্য</h2>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl mb-10 text-center text-title'>শিক্ষার্থীদের মন্তব্য</h2>
             
             <div className='lg:flex justify-between gap-8'>
                 {

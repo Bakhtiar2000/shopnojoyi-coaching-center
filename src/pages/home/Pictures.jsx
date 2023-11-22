@@ -14,7 +14,7 @@ const Pictures = () => {
             <div className='absolute bg-white h-full w-full opacity-50'></div>
             <div className='bg-title/5'>
                 <div className='container py-20'>
-                    <h2 className='absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl md:text-4xl lg:text-5xl mb-10 text-primary w-max'>ফটো গ্যালারি</h2>
+                    <h2 className='absolute top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl md:text-4xl lg:text-5xl mb-10 text-title w-max'>ফটো গ্যালারি</h2>
 
                     <div className='grid xl:grid-cols-2 gap-8 mt-20'>
                     {
