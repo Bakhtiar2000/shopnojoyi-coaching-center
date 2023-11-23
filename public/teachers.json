@@ -2,7 +2,7 @@
     {
         "_id": 1,
         "name": "আব্দুর রহমান রবিন",
-        "img": "https://i.ibb.co/16rmMXD/robin.jpg",
+        "img": "https://i.ibb.co/NWPGq3V/robin.png",
         "education": "পোস্ট গ্র্যাজুয়েট (গণিত), সরকারী তিতুমির কলেজ",
         "position": "পরিচালক",
         "classes": [
@@ -12,7 +12,7 @@
     {
         "_id": 2,
         "name": "খন্দকার মাহেদি হাসান",
-        "img": "https://i.ibb.co/bQkSr79/mehedibhai.jpg",
+        "img": "https://i.ibb.co/4j1SPDx/mehedibhai.png",
         "education": "পোস্ট গ্র্যাজুয়েট (এমবিএ), সরকারী তিতুমির কলেজ",
         "classes": [
             "ফাইন্যান্স এবং ব্যাংকিং"
@@ -21,7 +21,7 @@
     {
         "_id": 3,
         "name": "মো: মুন্না মিয়া",
-        "img": "https://i.ibb.co/qMHZLyN/munna.jpg",
+        "img": "https://i.ibb.co/Rvd7Jq2/munna.png",
         "education": "ব্যাচেলর অব কম্পিউটার সায়েন্স এন্ড ইঞ্জিনিয়ারিং, আইইউবিএটি",
         "classes": [
             "আইসিটি",
@@ -31,7 +31,7 @@
     {
         "_id": 4,
         "name": "মো: শাহরিয়ার অয়ন",
-        "img": "https://i.ibb.co/6tvKSV8/ayon.jpg",
+        "img": "https://i.ibb.co/5nXhjqd/ayon.png",
         "education": "ব্যাচেলর অব এএমএম, বিউএফটি",
         "classes": [
             "ইংরেজি",
@@ -41,7 +41,7 @@
     {
         "_id": 5,
         "name": "কানিজ ফাতেমা মীম",
-        "img": "https://i.ibb.co/2ZHKYwg/mim.jpg",
+        "img": "https://i.ibb.co/L1YkD9v/mim.png",
         "education": "বোটানি বিভাগ, সরকারী তিতুমির কলেজ",
         "classes": [
             "জীববিজ্ঞান", 
@@ -51,7 +51,7 @@
     {
         "_id": 6,
         "name": "মাহমুদুল হাসান শিহাব",
-        "img": "https://i.ibb.co/XZ5MC89/shihab2.png",
+        "img": "https://i.ibb.co/dG2S1Bg/shihab2-1.png",
         "education": "বিবিএ, ডিআইইউ",
         "classes": [
 
