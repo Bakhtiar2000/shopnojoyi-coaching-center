@@ -36,7 +36,6 @@ const SendMail = () => {
                             style={{ filter: 'contrast(1.1)',  }}
                             allowFullScreen
                         ></iframe>
-                        <div className="absolute inset-0 bg-black/5"></div>
                     </div>
 
                     {/* Mail Form  */}
