@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../shared/Navbar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../shared/Footer';
 
 const Main = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [pathname]);
+    
     return (
         <div>
             <Navbar></Navbar>
