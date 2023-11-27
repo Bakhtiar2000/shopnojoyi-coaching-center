@@ -16,7 +16,7 @@ const Reviews = () => {
             <div className='lg:flex justify-between gap-8 duration-300'>
                 {
                     reviews.map(review=> 
-                    <div key={review._id} className='px-5 pt-5 bg-title/5 rounded-lg duration-300 mb-5 lg:mb-0 max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-sm mx-auto shadow-lg shadow-title/50'>
+                    <div key={review._id} className='p-5 bg-title/5 rounded-lg duration-300 max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-sm mx-auto shadow-lg shadow-title/50'>
                         <div className='flex items-center gap-5 mb-5'>
                             <img className='rounded-full w-12 md:w-16 h-12 md:h-16 duration-300 object-cover object-center border-2 border-title/50 shadow-xl' src={review?.img} alt="" />
                             <div>
@@ -24,8 +24,7 @@ const Reviews = () => {
                                 <p className='text-sm md:text-base duration-300'>{review?.education}</p>
                             </div>
                         </div>
-                        <p className='mb-5 duration-300 text-sm md:text-base'>{review?.comment}</p>
-                        <p className='rounded-t border-2 border-title/80'></p>
+                        <p className='duration-300 text-sm md:text-base'>{review?.comment}</p>
                     </div>)
                 }
             </div>
