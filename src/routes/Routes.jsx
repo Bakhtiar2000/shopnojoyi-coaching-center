@@ -8,6 +8,17 @@ import Programs from '../pages/programs/Programs';
 import Lectures from '../pages/lectures/Lectures';
 import Contact from '../pages/contact/Contact';
 import AboutUs from '../pages/aboutUs/AboutUs';
+import Admission from '../pages/admission/Admission';
+import Admin from '../layout/Admin';
+import AdminHome from '../pages/adminPages/adminHome/AdminHome';
+import ManageTeachers from '../pages/adminPages/manageTeachers/ManageTeachers';
+import ManagePrograms from '../pages/adminPages/managePrograms/ManagePrograms';
+import ManageGallery from '../pages/adminPages/manageGallery/ManageGallery';
+import ManageReviews from '../pages/adminPages/manageReviews/ManageReviews';
+import ChangePassword from '../pages/adminPages/changePassword/ChangePassword';
+import Logout from '../pages/adminPages/logout/Logout';
+import ManageLectures from '../pages/adminPages/manageLectures/ManageLectures';
+import Login from '../pages/login/Login';
 
 const router= createBrowserRouter([
         {
@@ -38,6 +49,53 @@ const router= createBrowserRouter([
                 {
                     path: "/aboutUs",
                     element: <AboutUs></AboutUs>
+                },
+                {
+                    path: "/admission",
+                    element: <Admission></Admission>
+                }
+            ]
+        },
+        {
+            path: "/login",
+            element: <Login></Login>
+        },
+        {
+            path : "admin",
+            element: <Admin></Admin>,
+            errorElement: <ErrorPage></ErrorPage>,
+            children: [
+                {
+                    path: "adminHome",
+                    element: <AdminHome></AdminHome>
+                },
+                {
+                    path: "manageTeachers",
+                    element: <ManageTeachers></ManageTeachers>
+                },
+                {
+                    path: "managePrograms",
+                    element: <ManagePrograms></ManagePrograms>
+                },
+                {
+                    path: "manageGallery",
+                    element: <ManageGallery></ManageGallery>
+                },
+                {
+                    path: "manageLectures",
+                    element: <ManageLectures></ManageLectures>
+                },
+                {
+                    path: "manageReviews",
+                    element: <ManageReviews></ManageReviews>
+                },
+                {
+                    path: "changePassword",
+                    element: <ChangePassword></ChangePassword>
+                },
+                {
+                    path: "logout",
+                    element: <Logout></Logout>
                 }
             ]
         }
