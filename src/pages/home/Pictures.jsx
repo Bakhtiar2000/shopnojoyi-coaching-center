@@ -1,14 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PictureBox from './PictureBox';
+import useGallery from '../../hooks/useGallery';
 
 const Pictures = () => {
-    const [photos, setPhotos]= useState([])
+    const [galleryData] = useGallery();
 
-    useEffect(()=> {
-        fetch('/gallery.json')
-        .then(res=> res.json())
-        .then(data=> setPhotos(data))
-    }, [])
     return (
         <div className='relative bg-[url("https://img.freepik.com/premium-vector/simple-pattern-transparent-background-theme-school-learning-education_576736-30.jpg?w=1800")] bg-cover bg-center bg-no-repeat'>
             <div className='absolute bg-white h-full w-full opacity-50'></div>
@@ -18,7 +14,7 @@ const Pictures = () => {
 
                     <div className='grid xl:grid-cols-2 gap-8 mt-20'>
                     {
-                        photos?.map(photo=> 
+                        galleryData?.map(photo=> 
                         <PictureBox key={photo?._id} photo={photo}></PictureBox>    
                         )
                     }

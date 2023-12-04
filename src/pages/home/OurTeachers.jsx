@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
+import useTeachers from '../../hooks/useTeachers';
   
 
 const OurTeachers = () => {
-    const [teachers, setTeachers]= useState([])
-
-    useEffect(()=> {
-        fetch('/teachers.json')
-        .then(res=> res.json())
-        .then(data=> setTeachers(data))
-    }, [])
-
-    const pagination = {
-        clickable: true,
-        // renderBullet: function (index, className) {
-        //   return '<span class="' + className + '">' + (index + 1) + '</span>';
-        // },
-      };
+    const [teachersData]= useTeachers()
 
     return (
         <div className='container py-20'>
@@ -38,7 +26,7 @@ const OurTeachers = () => {
                 className="mySwiper"
             >
                 {
-                    teachers.map(teacher=> 
+                    teachersData.map(teacher=> 
                         <SwiperSlide
                             key={teacher?._id}
                             className=''

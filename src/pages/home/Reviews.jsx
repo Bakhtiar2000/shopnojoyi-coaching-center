@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import useReviews from '../../hooks/useReviews';
 
 const Reviews = () => {
-    const [reviews, setReviews]= useState([])
-
-    useEffect(()=> {
-        fetch('/reviews.json')
-        .then(res=> res.json())
-        .then(data=> setReviews(data))
-    }, [])
+    const [reviewsData] = useReviews()
 
     return (
         <div className='container py-20'>
@@ -15,7 +10,7 @@ const Reviews = () => {
             
             <div className='lg:flex justify-between gap-8 duration-300'>
                 {
-                    reviews.map(review=> 
+                    reviewsData.map(review=> 
                     <div key={review._id} className='p-5 bg-title/5 rounded-lg duration-300 max-w-xs sm:max-w-sm md:max-w-xl lg:max-w-sm mx-auto shadow-lg shadow-title/50'>
                         <div className='flex items-center gap-5 mb-5'>
                             <img className='rounded-full w-12 md:w-16 h-12 md:h-16 duration-300 object-cover object-center border-2 border-title/50 shadow-xl' src={review?.img} alt="" />

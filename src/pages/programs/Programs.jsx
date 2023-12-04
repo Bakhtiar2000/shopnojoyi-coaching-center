@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import ImageComponent from '../../components/ImageComponent';
+import usePrograms from '../../hooks/usePrograms';
 
 const Programs = () => {
-    const [programs, setPrograms] = useState([])
+    const [programsData] = usePrograms()
 
     // State to handle show more button
     const [showHscModelTest, setShowHscModelTest] = useState(false)
@@ -14,19 +15,13 @@ const Programs = () => {
     const [showMonthlyExam, setShowMonthlyExam] = useState(false)
     const [showRamadanHelp, setShowRamadanHelp] = useState(false)
 
-    useEffect(() => {
-        fetch('/programs.json')
-            .then(res => res.json())
-            .then(data => setPrograms(data))
-    }, [])
-
     // All data for selected program
-    const hscModelTest = programs.filter(program => program?.program === "এইচ.এস.সি মডেল টেস্ট")
-    const sscModelTest = programs.filter(program => program?.program === "এস.এস.সি মডেল টেস্ট")
-    const dakshinkhanFirstDay = programs.filter(program => program?.program === "দক্ষিনখান শাখায় প্রথম দিন")
-    const demoClass = programs.filter(program => program?.program === "প্রথম ৭ দিনের ডেমো ক্লাস")
-    const monthlyExam = programs.filter(program => program?.program === "মাসিক পরীক্ষা")
-    const ramadanHelp = programs.filter(program => program?.program === "রমাদান সাহায্য")
+    const hscModelTest = programsData.filter(program => program?.program === "এইচ.এস.সি মডেল টেস্ট")
+    const sscModelTest = programsData.filter(program => program?.program === "এস.এস.সি মডেল টেস্ট")
+    const dakshinkhanFirstDay = programsData.filter(program => program?.program === "দক্ষিনখান শাখায় প্রথম দিন")
+    const demoClass = programsData.filter(program => program?.program === "প্রথম ৭ দিনের ডেমো ক্লাস")
+    const monthlyExam = programsData.filter(program => program?.program === "মাসিক পরীক্ষা")
+    const ramadanHelp = programsData.filter(program => program?.program === "রমাদান সাহায্য")
 
     // Filtered data for selected program
     const renderedHscModelTest = showHscModelTest ? hscModelTest : hscModelTest.slice(0, 4)

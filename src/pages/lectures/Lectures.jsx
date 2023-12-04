@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Breadcrumbs from '../../components/Breadcrumbs';
+import useLectures from '../../hooks/useLectures';
 
 const Lectures = () => {
-    const [lectures, setLectures]= useState([])
+    const [lecturesData]= useLectures()
     const [showChemistry, setShowChemistry] = useState(false)
 
-    useEffect(()=> {
-        fetch('/lectures.json')
-        .then(res=> res.json())
-        .then(data=> setLectures(data))
-    }, [])
-    const mathLecture= lectures.filter(lecture=> lecture.playlist === "Math")
-    const chemistryLecture= lectures.filter(lecture=> lecture.playlist === "Chemistry")
-    const englishLecture= lectures.filter(lecture=> lecture.playlist === "English")
-    const financeLecture= lectures.filter(lecture=> lecture.playlist === "Finance & Banking")
-    const ictLecture= lectures.filter(lecture=> lecture.playlist === "I.C.T")
+    const mathLecture= lecturesData.filter(lecture=> lecture.playlist === "Math")
+    const chemistryLecture= lecturesData.filter(lecture=> lecture.playlist === "Chemistry")
+    const englishLecture= lecturesData.filter(lecture=> lecture.playlist === "English")
+    const financeLecture= lecturesData.filter(lecture=> lecture.playlist === "Finance & Banking")
+    const ictLecture= lecturesData.filter(lecture=> lecture.playlist === "I.C.T")
 
     const renderedChemistryLecture= showChemistry? chemistryLecture :chemistryLecture.slice(0,2)
 

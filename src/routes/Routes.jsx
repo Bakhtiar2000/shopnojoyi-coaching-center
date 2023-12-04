@@ -16,9 +16,7 @@ import ManagePrograms from '../pages/adminPages/managePrograms/ManagePrograms';
 import ManageGallery from '../pages/adminPages/manageGallery/ManageGallery';
 import ManageReviews from '../pages/adminPages/manageReviews/ManageReviews';
 import ChangePassword from '../pages/adminPages/changePassword/ChangePassword';
-import Logout from '../pages/adminPages/logout/Logout';
 import ManageLectures from '../pages/adminPages/manageLectures/ManageLectures';
-import Login from '../pages/login/Login';
 
 const router= createBrowserRouter([
         {
@@ -57,10 +55,6 @@ const router= createBrowserRouter([
             ]
         },
         {
-            path: "/login",
-            element: <Login></Login>
-        },
-        {
             path : "admin",
             element: <Admin></Admin>,
             errorElement: <ErrorPage></ErrorPage>,
@@ -92,10 +86,6 @@ const router= createBrowserRouter([
                 {
                     path: "changePassword",
                     element: <ChangePassword></ChangePassword>
-                },
-                {
-                    path: "logout",
-                    element: <Logout></Logout>
                 }
             ]
         }

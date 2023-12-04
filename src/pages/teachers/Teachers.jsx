@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { Helmet } from 'react-helmet';
+import useTeachers from '../../hooks/useTeachers';
 
 const Teachers = () => {
-    const [teachers, setTeachers]= useState([])
-
-    useEffect(()=> {
-        fetch('/teachers.json')
-        .then(res=> res.json())
-        .then(data=> setTeachers(data))
-    }, [])
+    const [teachersData]= useTeachers()
 
     return (
         <div className='container pb-20'>
@@ -20,7 +15,7 @@ const Teachers = () => {
 
             <div className='flex flex-wrap justify-center gap-10 mt-20'>
             {
-                teachers?.map(teacher=> 
+                teachersData?.map(teacher=> 
 
                 <div key={teacher?._id} className='p-5 rounded-lg w-96 md:w-80 lg:w-96 hover:bg-title/10 hover:shadow-xl duration-300'>
                     <img className='w-96 mx-auto rounded' src={teacher?.img} alt={teacher?.name} />
