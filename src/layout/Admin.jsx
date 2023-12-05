@@ -9,6 +9,7 @@ import { RiLockPasswordFill } from "react-icons/ri"
 import { MdRateReview } from "react-icons/md";
 import logo from "/logo.png"
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const Admin = () => {
     const [isAdmin, setIsAdmin] = useState(false);
@@ -64,6 +65,9 @@ const Admin = () => {
 
     return (
         <>
+            <Helmet>
+                <title>এডমিন - স্বপ্নজয়ী</title>
+            </Helmet>
             {
                 !isAdmin ?
                     // Login
@@ -99,7 +103,7 @@ const Admin = () => {
                     <div className="drawer lg:drawer-open">
                         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                         <div className="drawer-content m-2 lg:m-0">
-                            <label htmlFor="my-drawer-2" className="text-xl sm:text-2xl md:text-3xl text-title cursor-pointer rounded-full btn-primary drawer-button lg:hidden">
+                            <label htmlFor="my-drawer-2" className="fixed text-xl sm:text-2xl md:text-3xl text-title cursor-pointer rounded-full btn-primary drawer-button lg:hidden">
                                 <span>☰</span>
                             </label>
                             <Outlet></Outlet>
