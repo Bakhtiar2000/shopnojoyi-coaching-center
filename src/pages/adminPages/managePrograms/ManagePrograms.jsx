@@ -32,8 +32,6 @@ const ManagePrograms = () => {
         console.log(updateData)
     }
 
-    console.log(changeField);
-
     return (
         <div className='m-5 lg:m-10'>
             <h2 className='text-3xl sm:text-4xl md:text-5xl text-center mt-10 text-title font-semibold'>Manage Program Photos</h2>
@@ -159,20 +157,20 @@ const ManagePrograms = () => {
                                         <input
                                             type='text'
                                             {...register("program", { required: true })}
-                                            className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.program && 'border border-red-500'}`}
+                                            className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-1 ${errors.program && 'border border-red-500'}`}
                                         />
                                 }
                             </div>
-                            <div onClick={() => setChangeField(!changeField)} className=' text-blue-500 hover:underline text-sm duration-300 cursor-pointer'>
+                            <div onClick={() => setChangeField(!changeField)} className=' text-blue-500 hover:underline text-sm duration-300 cursor-pointer w-fit'>
                                 {
-                                    !changeField ? "নতুন প্রোগ্রাম ?" : "পুরাতন প্রোগ্রাম ?"
+                                    !changeField ? "New Program ?" : "Old Program ?"
                                 }
                             </div>
                         </div>
 
                         {/* Submit */}
                         <input
-                            className="text-center px-3 md:px-5 py-1 md:py-3 bg-primary hover:bg-title duration-300 rounded-lg text-white cursor-pointer"
+                            className="mt-3 text-center px-3 md:px-5 py-1 md:py-3 bg-primary hover:bg-title duration-300 rounded-lg text-white cursor-pointer"
                             type="submit"
                             value="Save Changes"
                         />
