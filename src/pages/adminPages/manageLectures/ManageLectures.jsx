@@ -86,7 +86,7 @@ const ManageLectures = () => {
                 </div>
             </div>
 
-            < button onClick={() => setIsLectureModalOpen(true)} className='p-5 rounded-lg w-[600px] h-[300px] border border-dashed border-black hover:shadow-xl duration-300 flex justify-center items-center text-5xl mx-auto mt-10'>
+            < button onClick={() => setIsLectureModalOpen(true)} className='p-5 rounded-lg w-[320px] sm:w-[400px] md:w-[480px] lg:w-[560px] xl:w-[640px] h-[180px] sm:h-[225px] md:h-[270px] lg:h-[315px] xl:h-[360px] border border-dashed border-black hover:shadow-xl duration-300 flex justify-center items-center text-5xl mx-auto mt-10'>
                 <AiOutlinePlus />
             </button>
 
@@ -144,7 +144,7 @@ const ManageLectures = () => {
                                         <input
                                             type='text'
                                             {...register("playlist", { required: true })}
-                                            className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.playlist && 'border border-red-500'}`}
+                                            className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary ${errors.playlist && 'border border-red-500'}`}
                                         />
                                 }
                             </div>

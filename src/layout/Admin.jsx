@@ -128,12 +128,12 @@ const Admin = () => {
                                 <li><ActiveLink to='/admin/managePrograms'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><IoMdPhotos /> Manage Program Photos</div></ActiveLink></li>
                                 <li><ActiveLink to='/admin/manageGallery'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><GrGallery /> Manage Gallery Photos</div></ActiveLink></li>
                                 <li><ActiveLink to='/admin/manageLectures'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><SiGoogleclassroom /> Manage Online Lectures</div></ActiveLink></li>
-                                <li><ActiveLink to='/admin/manageReviews'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><MdRateReview /> Manage Reviews</div></ActiveLink></li>
+                                {/* <li><ActiveLink to='/admin/manageReviews'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><MdRateReview /> Manage Reviews</div></ActiveLink></li> */}
 
                                 <div className="border-t border-primary m-3"></div>
 
                                 <li><ActiveLink to='/admin/changePassword'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><RiLockPasswordFill /> Change password</div></ActiveLink></li>
-                                <li><Link to='/'><div className='flex items-center gap-2 text-sm sm:text-base duration-300 bg-red-500 px-3 py-1 rounded'><IoIosLogOut />Logout</div></Link></li>
+                                <li><Link to='/'><div className='flex items-center gap-2 text-sm sm:text-base duration-300 bg-red-500 px-3 py-1 rounded mt-2'><IoIosLogOut />Logout</div></Link></li>
                             </ul>
 
                         </div>
