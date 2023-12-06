@@ -5,9 +5,12 @@ import { AiOutlinePlus } from "react-icons/ai";
 import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
 import { IoMdAddCircleOutline } from 'react-icons/io';
+import useAxios from '../../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const ManageTeachers = () => {
-    const [teachersData] = useTeachers()
+    const [axiosSecure] = useAxios()
+    const [teachersData, , refetch] = useTeachers()
     const [isTeacherModalOpen, setIsTeacherModalOpen] = useState(false)
     const [classes, setClasses] = useState([{ id: 1, value: "" }]);
     const [maximumWarning, setMaximumWarning] = useState(false)
@@ -28,9 +31,27 @@ const ManageTeachers = () => {
             position: data?.position,
             classes: data?.classes
         }
-        setIsTeacherModalOpen(false)
-        reset()
-        console.log(updateData)
+        axiosSecure.post('/teachers', updateData)
+            .then(res => {
+                console.log(res);
+                if (res.status === 200) {
+                    Swal.fire({
+                        title: 'Teacher added successfully',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                    setIsTeacherModalOpen(false)
+                    reset()
+                    refetch()
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div className='m-5 lg:m-10'>
@@ -38,7 +59,7 @@ const ManageTeachers = () => {
 
             <div className='flex flex-wrap justify-center gap-10 mt-20'>
                 {
-                    teachersData?.map(teacher => <TeacherBox key={teacher?._id} teacher={teacher}></TeacherBox>)
+                    teachersData?.map(teacher => <TeacherBox key={teacher?._id} teacher={teacher} refetch={refetch}></TeacherBox>)
                 }
 
 
@@ -61,17 +82,18 @@ const ManageTeachers = () => {
                         <div className='sm:flex gap-3'>
                             {/* Teacher image */}
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Teacher's Photo Link:</label>
+                                <label className='text-dark text-sm'>Teacher's Photo Link <span className='text-red-500'>*</span></label>
                                 <input
                                     type='text'
                                     {...register("photo", { required: true })}
+                                    placeholder='16:9 photo ratio is preferred'
                                     className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
                                 />
                             </div>
 
                             {/* Teacher name */}
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Teacher's Name:</label>
+                                <label className='text-dark text-sm'>Teacher's Name <span className='text-red-500'>*</span></label>
                                 <input
                                     type='text'
                                     {...register("name", { required: true })}
@@ -87,8 +109,8 @@ const ManageTeachers = () => {
                                 <input
                                     type='text'
                                     placeholder='e.g. বিবিএ, ডিআইইউ'
-                                    {...register("edu", { required: true })}
-                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.edu && 'border border-red-500'}`}
+                                    {...register("edu")}
+                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3`}
                                 />
                             </div>
 
@@ -106,12 +128,12 @@ const ManageTeachers = () => {
 
                         {/* Classes */}
                         <div className='w-full'>
-                            <label className='text-dark text-sm'>Classes taken by the teacher:</label>
+                            <label className='text-dark text-sm'>Classes taken by the teacher <span className='text-red-500'>*</span></label>
                             {classes.map((singleClass, index) => (
                                 <div key={singleClass.id} className='flex items-center gap-5 mb-3'>
                                     <input
                                         type='text'
-                                        className='w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3'
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.name && 'border border-red-500'}`}
                                         {...register(`classes[${index}]`)}
                                     />
                                     {index === classes.length - 1 && (

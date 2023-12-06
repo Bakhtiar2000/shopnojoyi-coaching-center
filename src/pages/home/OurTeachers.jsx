@@ -32,7 +32,7 @@ const OurTeachers = () => {
                             className=''
                         >
                             <div className='md:flex items-center justify-center gap-10 lg:gap-16 mb-12 mx-auto w-fit'>
-                                <img className='w-96 lg:w-[520px] mx-auto rounded shadow-xl hover:shadow-title/50 duration-300' src={teacher?.img} alt={teacher?.name} />
+                                <img className='w-96 lg:w-[512px] h-[216px] lg:h-[288px] object-cover object-center mx-auto rounded shadow-xl hover:shadow-title/50 duration-300' src={teacher?.img} alt={teacher?.name} />
 
                                 <div className='mt-5 md:mt-0'>
                                     <p className='text-2xl lg:text-3xl duration-300 text-primary mb-3'>{teacher?.name} {teacher?.position && `(${teacher?.position})`}</p>

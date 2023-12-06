@@ -4,9 +4,12 @@ import ProgramBox from './Programbox';
 import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
 import { AiOutlinePlus } from 'react-icons/ai';
+import useAxios from '../../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const ManagePrograms = () => {
-    const [programsData, refetch] = usePrograms()
+    const [axiosSecure]= useAxios()
+    const [programsData, , refetch] = usePrograms()
     const [isProgramModalOpen, setIsProgramModalOpen] = useState(false)
     const [changeField, setChangeField] = useState(false)
     const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm();
@@ -27,9 +30,27 @@ const ManagePrograms = () => {
             hash: data?.hash,
             program: data?.program
         }
-        setIsProgramModalOpen(false)
-        reset()
-        console.log(updateData)
+        axiosSecure.post('/programs', updateData)
+            .then(res => {
+                console.log(res);
+                if (res.status === 200) {
+                    Swal.fire({
+                        title: 'Photo updated successfully',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                    setIsProgramModalOpen(false)
+                    reset()
+                    refetch()
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -42,7 +63,7 @@ const ManagePrograms = () => {
                     <h2 className='text-2xl sm:text-3xl text-title font-semibold mb-5 md:mb-8'>এইচ.এস.সি মডেল টেস্ট</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 duration-300 md:gap-10'>
                         {
-                            hscModelTest?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch}></ProgramBox>)
+                            hscModelTest?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch} width="300px" height="225px"></ProgramBox>)
                         }
                     </div>
                 </div>
@@ -52,7 +73,7 @@ const ManagePrograms = () => {
                     <h2 className='text-2xl sm:text-3xl text-title font-semibold mb-5 md:mb-8'>এস.এস.সি মডেল টেস্ট</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 duration-300 md:gap-10'>
                         {
-                            sscModelTest?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch}></ProgramBox>)
+                            sscModelTest?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch} width="300px" height="225px"></ProgramBox>)
                         }
                     </div>
                 </div>
@@ -62,7 +83,7 @@ const ManagePrograms = () => {
                     <h2 className='text-2xl sm:text-3xl text-title font-semibold mb-5 md:mb-8'>প্রথম ৭ দিনের ডেমো ক্লাস</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 duration-300 md:gap-10'>
                         {
-                            demoClass?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch}></ProgramBox>)
+                            demoClass?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch} width="300px" height="225px"></ProgramBox>)
                         }
                     </div>
                 </div>
@@ -72,7 +93,7 @@ const ManagePrograms = () => {
                     <h2 className='text-2xl sm:text-3xl text-title font-semibold mb-5 md:mb-8'>মাসিক পরীক্ষা</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 duration-300 md:gap-10'>
                         {
-                            monthlyExam?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch}></ProgramBox>)
+                            monthlyExam?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch} width="300px" height="225px"></ProgramBox>)
                         }
                     </div>
                 </div>
@@ -82,7 +103,7 @@ const ManagePrograms = () => {
                     <h2 className='text-2xl sm:text-3xl text-title font-semibold mb-5 md:mb-8'>রমাদান সাহায্য</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 duration-300 md:gap-10'>
                         {
-                            ramadanHelp?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch}></ProgramBox>)
+                            ramadanHelp?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch} width="270px" height="480px"></ProgramBox>)
                         }
                     </div>
                 </div>
@@ -92,7 +113,7 @@ const ManagePrograms = () => {
                     <h2 className='text-2xl sm:text-3xl text-title font-semibold mb-5 md:mb-8'>দক্ষিনখান শাখায় প্রথম দিন</h2>
                     <div className='grid lg:grid-cols-2 gap-6 duration-300 md:gap-10'>
                         {
-                            dakshinkhanFirstDay?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch}></ProgramBox>)
+                            dakshinkhanFirstDay?.map(program => <ProgramBox key={program?._id} program={program} refetch={refetch} width="500px" height="225px"></ProgramBox>)
                         }
                     </div>
                 </div>
@@ -117,29 +138,34 @@ const ManagePrograms = () => {
                         <div className='sm:flex gap-3'>
                             {/* image */}
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Photo Link:</label>
+                                <label className='text-dark text-sm'>Photo Link <span className='text-red-500'>*</span></label>
                                 <input
                                     type='text'
                                     {...register("photo", { required: true })}
-                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
+                                    placeholder='4:3 photo ratio is preferred'
+                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary ${errors.photo && 'border border-red-500'}`}
                                 />
                             </div>
 
                             {/* Hash */}
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Photo Hash:</label>
+                                <label className='text-dark text-sm'>Photo Hash <span className='text-red-500'>*</span></label>
                                 <input
                                     type='text'
                                     {...register("hash", { required: true })}
-                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.hash && 'border border-red-500'}`}
+                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary ${errors.hash && 'border border-red-500'}`}
                                 />
                             </div>
                         </div>
+                        <p className='text-end text-sm mt-1 my-1 mr-3'>Get Blurhash string from: <a className='text-blue-500 underline' href="https://blurha.sh/" target="_blank">here</a></p>
+
+                        {/* Guide */}
+                        <p className='rounded p-3 bg-primary/20 my-3 text-sm'><span className='text-red-500'>Guide for finding blurhash string:</span> After going to the link above, you'll reach the blurhash website. Scroll down and you'll find an upload option. Click and upload the photo that you want to add here. They will provide a string according to the image. Copy it and paste in the photo hash input box above.</p>
 
                         {/* Program */}
                         <div className='mb-3'>
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Program Name:</label>
+                                <label className='text-dark text-sm'>Program Name <span className='text-red-500'>*</span></label>
                                 {
                                     !changeField ?
                                         <select

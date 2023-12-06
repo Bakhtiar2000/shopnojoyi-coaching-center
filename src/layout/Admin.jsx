@@ -10,14 +10,21 @@ import { MdRateReview } from "react-icons/md";
 import logo from "/logo.png"
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
+import useAxios from '../hooks/useAxios';
 
 const Admin = () => {
+    const [axiosSecure] = useAxios()
     const [isAdmin, setIsAdmin] = useState(false);
+    const [pass, setPass] = useState(false);
     const [error, setError] = useState('');
     const [wrongAttempts, setWrongAttempts] = useState(0);
     const [accessDenied, setAccessDenied] = useState(false);
     const denialPeriod = 30 * 1000; // 30 seconds in milliseconds
     const navigate = useNavigate()
+
+    axiosSecure.get("password")
+        .then(res => setPass(res.data[0].pass))
+
     useEffect(() => {
         const denialTimestamp = localStorage.getItem('accessDenialTimestamp');
         if (denialTimestamp) {
@@ -39,7 +46,7 @@ const Admin = () => {
         e.preventDefault();
         const password = e.target.password.value;
 
-        if (password !== '111111') {
+        if (password !== pass) {
             setError('Password did not match');
             setWrongAttempts(prevAttempts => prevAttempts + 1); // Increment attempts
             if (wrongAttempts + 1 >= 5) {
@@ -63,6 +70,10 @@ const Admin = () => {
         navigate("/")
     }
 
+    const handleForgetPassword= () => {
+        console.log("Sorry, I forgot it")
+    }
+
     return (
         <>
             <Helmet>
@@ -82,6 +93,7 @@ const Admin = () => {
                                     name="password"
                                     id='password'
                                 />
+                                <p onClick={handleForgetPassword} className='text-end w-52 md:w-64 lg:w-80 duration-300 text-sm hover:underline text-blue-500 cursor-pointer'>Forgot password?</p>
                                 {
                                     error &&
                                     <>

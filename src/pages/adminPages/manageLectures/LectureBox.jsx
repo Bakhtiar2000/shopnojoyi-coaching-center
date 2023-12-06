@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdOutlineDelete } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import useAxios from '../../../hooks/useAxios';
 
 const LectureBox = ({ lecture, refetch }) => {
-
+    const [axiosSecure]= useAxios()
     const handleDelete = () => {
         Swal.fire({
             title: "Are you sure?",
@@ -15,7 +16,7 @@ const LectureBox = ({ lecture, refetch }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axiosSecure
-                    .delete(`/programs/delete/${lecture?._id}`)
+                    .delete(`/lectures/${lecture?._id}`)
                     .then((res) => {
                         if (res.status == 200) {
                             refetch()

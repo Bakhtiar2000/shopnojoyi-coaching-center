@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { MdOutlineDelete } from 'react-icons/md';
 import Swal from 'sweetalert2';
+import useAxios from '../../../hooks/useAxios';
 
 const GalleryBox = ({ photo, refetch }) => {
+    
+    const [axiosSecure]= useAxios()
     const { _id, img, description } = photo
     const [hoveredId, setHoveredId] = useState(null);
     const handleHover = id => {
@@ -24,7 +27,7 @@ const GalleryBox = ({ photo, refetch }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axiosSecure
-                    .delete(`/programs/delete/${_id}`)
+                    .delete(`/gallery/${_id}`)
                     .then((res) => {
                         if (res.status == 200) {
                             refetch()

@@ -4,9 +4,12 @@ import LectureBox from './LectureBox';
 import { AiOutlinePlus } from 'react-icons/ai';
 import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
+import useAxios from '../../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const ManageLectures = () => {
-    const [lecturesData, refetch] = useLectures();
+    const [axiosSecure] = useAxios()
+    const [lecturesData, , refetch] = useLectures();
     const [isLectureModalOpen, setIsLectureModalOpen] = useState(false)
     const [changeField, setChangeField] = useState(false)
     const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm();
@@ -17,9 +20,27 @@ const ManageLectures = () => {
             title: data?.title,
             playlist: data?.playlist
         }
-        setIsLectureModalOpen(false)
-        reset()
-        console.log(updateData)
+        axiosSecure.post('/lectures', updateData)
+            .then(res => {
+                console.log(res);
+                if (res.status === 200) {
+                    Swal.fire({
+                        title: 'Lecture updated successfully',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                    setIsLectureModalOpen(false)
+                    reset()
+                    refetch()
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     const mathLecture = lecturesData.filter(lecture => lecture.playlist === "Math")
@@ -104,7 +125,7 @@ const ManageLectures = () => {
                         <div className='sm:flex gap-3'>
                             {/* video link */}
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Video Link:</label>
+                                <label className='text-dark text-sm'>Video Link <span className='text-red-500'>*</span></label>
                                 <input
                                     type='text'
                                     {...register("video", { required: true })}
@@ -114,7 +135,7 @@ const ManageLectures = () => {
 
                             {/* video title */}
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Video Title:</label>
+                                <label className='text-dark text-sm'>Video Title <span className='text-red-500'>*</span></label>
                                 <input
                                     type='text'
                                     {...register("title", { required: true })}
@@ -122,11 +143,13 @@ const ManageLectures = () => {
                                 />
                             </div>
                         </div>
+                        {/* Guide */}
+                        <p className='rounded p-3 bg-primary/20 my-3 text-sm'><span className='text-red-500'>Guide for finding accurate youtube video link:</span> Click share option below the video in youtube. Then there will be an option named "embed". Click it and you'll see a code. In the code, src will be written (2nd or 3rd line). src contains a link inside double quotation (""). Copy the full link and paste in video link input box above.</p>
 
                         {/* Playlist */}
                         <div className='mb-3'>
                             <div className='w-full'>
-                                <label className='text-dark text-sm'>Playlist Name:</label>
+                                <label className='text-dark text-sm'>Playlist Name <span className='text-red-500'>*</span></label>
                                 {
                                     !changeField ?
                                         <select

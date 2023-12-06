@@ -6,12 +6,12 @@ const usePrograms = () => {
     const { data: programsData = [], isLoading: programsLoading, refetch } = useQuery({
         queryKey: ['programsData'],
         queryFn: async () => {
-            const res = await fetch('/programs.json');
-            const data = await res.json();
-            return data;
+            // const res = await fetch('/programs.json');
+            // const data = await res.json();
+            // return data;
 
-            // const res = await axiosSecure.get("attorney");
-            // return res.data;
+            const res = await axiosSecure.get("programs");
+            return res.data;
         },
     });
     return [programsData, programsLoading, refetch];

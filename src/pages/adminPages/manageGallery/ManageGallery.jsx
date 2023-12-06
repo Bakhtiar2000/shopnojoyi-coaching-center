@@ -4,9 +4,12 @@ import GalleryBox from './GalleryBox';
 import { AiOutlinePlus } from 'react-icons/ai';
 import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+import useAxios from '../../../hooks/useAxios';
 
 const ManageGallery = () => {
-    const [galleryData, refetch] = useGallery();
+    const [axiosSecure]= useAxios()
+    const [galleryData, , refetch] = useGallery();
     const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false)
     const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm();
 
@@ -15,9 +18,27 @@ const ManageGallery = () => {
             img: data?.photo,
             description: data?.description
         }
-        setIsGalleryModalOpen(false)
-        reset()
-        console.log(updateData)
+        axiosSecure.post('/gallery', updateData)
+            .then(res => {
+                console.log(res);
+                if (res.status === 200) {
+                    Swal.fire({
+                        title: 'Photo updated successfully',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                    setIsGalleryModalOpen(false)
+                    reset()
+                    refetch()
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -33,10 +54,11 @@ const ManageGallery = () => {
             </div>
 
             {
-                galleryData.length < 4 &&
+                galleryData.length < 4 ?
                 < button onClick={() => setIsGalleryModalOpen(true)} className='p-5 rounded-lg w-[600px] h-[300px] border border-dashed border-black hover:shadow-xl duration-300 flex justify-center items-center text-5xl mx-auto mt-10'>
                     <AiOutlinePlus />
-                </button>
+                </button>: 
+                <p className='text-center text-lg mt-10 text-red-500'>You can have maximum four photos here</p>
             }
 
             {
@@ -52,9 +74,10 @@ const ManageGallery = () => {
 
                         {/* image */}
                         <div className='w-full'>
-                            <label className='text-dark text-sm'>Photo Link:</label>
+                            <label className='text-dark text-sm'>Photo Link <span className='text-red-500'>*</span></label>
                             <input
                                 type='text'
+                                placeholder='2:1 photo ratio is preferred'
                                 {...register("photo", { required: true })}
                                 className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
                             />
@@ -62,7 +85,7 @@ const ManageGallery = () => {
 
                         {/* Description */}
                         <div className='w-full'>
-                            <label className='text-dark text-sm'>Photo Description:</label>
+                            <label className='text-dark text-sm'>Photo Description <span className='text-red-500'>*</span></label>
                             <input
                                 type='text'
                                 {...register("description", { required: true })}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import useAxios from '../../../hooks/useAxios';
 
 const ChangePassword = () => {
+    const [axiosSecure] = useAxios()
     const [error, setError] = useState(false)
     const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm();
 
@@ -12,13 +14,29 @@ const ChangePassword = () => {
             reset()
             return
         }
+        const updateData = {
+            pass : data.password
+        }
 
-        reset()
-        Swal.fire(
-            'Password updated!',
-            'Use new password from now on!',
-            'success'
-        )
+        axiosSecure.patch(`/password`, updateData)
+            .then(response => {
+                console.log(response.data)
+                if(response.data.modifiedCount>0){
+                    reset()
+                    Swal.fire({
+                        title: 'password updated successfully',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }
 
     return (
