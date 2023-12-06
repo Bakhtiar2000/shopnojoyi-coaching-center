@@ -45,6 +45,8 @@ const ManageTeachers = () => {
                         }
                     })
                     setIsTeacherModalOpen(false)
+                    setMaximumWarning(false)
+                    setClasses([{ id: 1, value: "" }])
                     reset()
                     refetch()
                 }
@@ -130,7 +132,7 @@ const ManageTeachers = () => {
                         <div className='w-full'>
                             <label className='text-dark text-sm'>Classes taken by the teacher <span className='text-red-500'>*</span></label>
                             {classes.map((singleClass, index) => (
-                                <div key={singleClass.id} className='flex items-center gap-5 mb-3'>
+                                <div key={singleClass.id} className='flex items-center gap-5 mb-2'>
                                     <input
                                         type='text'
                                         className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.name && 'border border-red-500'}`}
