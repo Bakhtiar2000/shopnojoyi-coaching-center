@@ -7,7 +7,7 @@ const SendMail = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_6cj9dkq', 'template_oumfitc', form.current, '5scPk13_dW8HI-vmZ')
+        emailjs.sendForm('service_7jsimbo', 'template_gfwzzfl', form.current, 'Js4RUbk96PP_PghS3')
             .then((result) => {
                 e.target.reset()
                 Swal.fire(

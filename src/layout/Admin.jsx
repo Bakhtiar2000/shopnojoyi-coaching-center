@@ -6,7 +6,6 @@ import { IoMdPerson, IoMdPhotos, IoIosLogOut } from "react-icons/io";
 import { GrGallery } from "react-icons/gr";
 import { SiGoogleclassroom } from "react-icons/si"
 import { RiLockPasswordFill } from "react-icons/ri"
-import { MdRateReview } from "react-icons/md";
 import logo from "/logo.png"
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
@@ -70,10 +69,6 @@ const Admin = () => {
         navigate("/")
     }
 
-    const handleForgetPassword= () => {
-        console.log("Sorry, I forgot it")
-    }
-
     return (
         <>
             <Helmet>
@@ -93,7 +88,6 @@ const Admin = () => {
                                     name="password"
                                     id='password'
                                 />
-                                <p onClick={handleForgetPassword} className='text-end w-52 md:w-64 lg:w-80 duration-300 text-sm hover:underline text-blue-500 cursor-pointer'>Forgot password?</p>
                                 {
                                     error &&
                                     <>

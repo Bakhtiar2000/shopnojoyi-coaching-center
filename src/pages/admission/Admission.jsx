@@ -13,6 +13,8 @@ const Admission = () => {
             <Breadcrumbs bg="https://img.freepik.com/free-vector/classroom-mathematics-learning-school_107791-1685.jpg?size=626&ext=jpg&ga=GA1.1.670690934.1670350375&semt=sph" title="Admission" />
 
             <section className="container py-20">
+
+                <h3 className='changing-text text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-10 py-2'>৭ দিনের ফ্রি ডেমো ক্লাসে তোমাকে স্বাগতম </h3>
                 <div className='lg:flex justify-center gap-8 xl:gap-16  w-fit mx-auto'>
 
                 <img className='w-96 sm:w-[520px] lg:w-96 xl:w-[520px] duration-300 border border-[#313238] rounded mb-10 lg:mb-0' src={admission1} alt="" />
