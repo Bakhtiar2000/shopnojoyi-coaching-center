@@ -21,7 +21,7 @@ const Admin = () => {
     const denialPeriod = 30 * 1000; // 30 seconds in milliseconds
     const navigate = useNavigate()
 
-    axiosSecure.get("password")
+    axiosSecure.get(`password?token=${import.meta.env.VITE_Token}`)
         .then(res => setPass(res.data[0].pass))
 
     useEffect(() => {

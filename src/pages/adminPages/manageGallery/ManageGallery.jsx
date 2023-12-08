@@ -20,7 +20,6 @@ const ManageGallery = () => {
         }
         axiosSecure.post('/gallery', updateData)
             .then(res => {
-                console.log(res);
                 if (res.status === 200) {
                     Swal.fire({
                         title: 'Photo updated successfully',

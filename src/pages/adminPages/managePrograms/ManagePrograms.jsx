@@ -32,7 +32,6 @@ const ManagePrograms = () => {
         }
         axiosSecure.post('/programs', updateData)
             .then(res => {
-                console.log(res);
                 if (res.status === 200) {
                     Swal.fire({
                         title: 'Photo updated successfully',

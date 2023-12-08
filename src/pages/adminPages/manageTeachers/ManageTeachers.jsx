@@ -33,7 +33,6 @@ const ManageTeachers = () => {
         }
         axiosSecure.post('/teachers', updateData)
             .then(res => {
-                console.log(res);
                 if (res.status === 200) {
                     Swal.fire({
                         title: 'Teacher added successfully',

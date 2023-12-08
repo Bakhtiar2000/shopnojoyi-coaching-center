@@ -18,9 +18,8 @@ const ChangePassword = () => {
             pass : data.password
         }
 
-        axiosSecure.patch(`/password`, updateData)
+        axiosSecure.patch(`password?token=${import.meta.env.VITE_Token}`, updateData)
             .then(response => {
-                console.log(response.data)
                 if(response.data.modifiedCount>0){
                     reset()
                     Swal.fire({

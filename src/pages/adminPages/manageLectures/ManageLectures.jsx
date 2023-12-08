@@ -22,7 +22,6 @@ const ManageLectures = () => {
         }
         axiosSecure.post('/lectures', updateData)
             .then(res => {
-                console.log(res);
                 if (res.status === 200) {
                     Swal.fire({
                         title: 'Lecture updated successfully',
