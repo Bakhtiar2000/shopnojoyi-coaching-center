@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import usePrograms from '../../../hooks/usePrograms';
-import ProgramBox from './Programbox';
+import ProgramBox from './ProgramBox';
 import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
 import { AiOutlinePlus } from 'react-icons/ai';
