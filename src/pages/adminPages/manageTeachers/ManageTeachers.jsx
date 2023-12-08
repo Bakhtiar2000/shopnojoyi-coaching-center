@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useTeachers from '../../../hooks/useTeachers';
-import TeacherBox from './Teacherbox';
+import TeacherBox from './TeacherBox';
 import { AiOutlinePlus } from "react-icons/ai";
 import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
