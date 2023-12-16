@@ -23,7 +23,6 @@ const Lectures = () => {
             <Breadcrumbs bg="https://img.freepik.com/free-vector/school-children-attending-distance-class-monitors-desks-classroom-screen-view_74855-15518.jpg?w=1380&t=st=1700408511~exp=1700409111~hmac=b5d0619ba203da690edb83cdba57027500575fed726f2fe10449baaa085783d6" title="Online Lectures" />
 
             <div>
-
                 {/* Math */}
                 <div className='mt-10 bg-title/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
                     <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📐 গণিত</h2>
@@ -95,6 +94,11 @@ const Lectures = () => {
                         </div>)
                     }
                     </div>
+                </div>
+
+                {/* Get Resources button */}
+                <div className='flex justify-center'>
+                    <a className='py-2 px-5 bg-title rounded shadow-lg text-white text-xl mt-10' href="https://forms.gle/Usebo2GTnvb7Wr3bA" target='_blank'>Get Resources</a>
                 </div>
             </div>
         </div>

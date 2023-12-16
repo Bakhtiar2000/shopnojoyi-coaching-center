@@ -65,7 +65,7 @@ const Admission = () => {
                 </div>
                 {/* Get admitted button */}
                 <div className='flex justify-center'>
-                    <a className='py-2 px-5 bg-title rounded shadow-lg text-white text-xl mt-10' href="https://forms.gle/BsHdfeSd1mvuWcqU7" target='_blank'>Get Admitted</a>
+                    <a className='py-2 px-5 bg-title rounded shadow-lg text-white text-xl mt-10' href="https://forms.gle/Usebo2GTnvb7Wr3bA" target='_blank'>Get Admitted</a>
                 </div>
             </section>
         </div>
