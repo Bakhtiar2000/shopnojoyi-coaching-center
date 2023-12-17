@@ -98,7 +98,7 @@ const Lectures = () => {
 
                 {/* Get Resources button */}
                 <div className='flex justify-center'>
-                    <a className='py-2 px-5 bg-title rounded shadow-lg text-white text-xl mt-10' href="https://forms.gle/Usebo2GTnvb7Wr3bA" target='_blank'>Get Resources</a>
+                    <a className='py-2 px-5 bg-title rounded shadow-lg text-white text-xl mt-10' href="https://drive.google.com/drive/folders/1-382h4i8WFcvmrgLrTHt45bLEsrPyJk3" target='_blank'>Get Resources</a>
                 </div>
             </div>
         </div>
