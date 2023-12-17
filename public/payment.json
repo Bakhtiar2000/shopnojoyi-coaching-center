@@ -1,0 +1,121 @@
+[
+    {
+        "_id": 1,
+        "class": "11 - 12",
+        "group": [
+            {
+                "name": "Science",
+                "subjects": [
+                    "Bangla",
+                    "English",
+                    "Math",
+                    "Physics",
+                    "Chemistry",
+                    "Biology",
+                    "ICT"
+                ]
+            },
+            {
+                "name": "Commerce",
+                "subjects": [
+                    "Bangla",
+                    "English",
+                    "Math",
+                    "Finance",
+                    "Hishab nikash",
+                    "ICT"
+                ]
+            },
+            {
+                "name": "Science",
+                "subjects": [
+                    "Bangla",
+                    "English",
+                    "Math",
+                    "Vugo;",
+                    "Charukola",
+                    "ICT"
+                ]
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "class": "9 - 10",
+        "group": [
+            {
+                "name": "Science",
+                "subjects": [
+                    "Bangla",
+                    "English",
+                    "Math",
+                    "Physics",
+                    "Chemistry",
+                    "Biology",
+                    "ICT"
+                ]
+            },
+            {
+                "name": "Commerce",
+                "subjects": [
+                    "Bangla",
+                    "English",
+                    "Math",
+                    "Finance",
+                    "Hishab nikash",
+                    "ICT"
+                ]
+            },
+            {
+                "name": "Science",
+                "subjects": [
+                    "Bangla",
+                    "English",
+                    "Math",
+                    "Vugo;",
+                    "Charukola",
+                    "ICT"
+                ]
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "class": "8",
+        "subjects": [
+            "Bangla",
+            "English",
+            "Math",
+            "B.G.S",
+            "R.S.T.",
+            "Science",
+            "ICT"
+        ]
+    },
+    {
+        "_id": 4,
+        "class": "7",
+        "subjects": [
+            "Bangla",
+            "English",
+            "Math",
+            "B.G.S",
+            "R.S.T.",
+            "Science",
+            "ICT"
+        ]
+    },
+    {
+        "_id": 5,
+        "class": "6",
+        "subjects": [
+            "Bangla",
+            "English",
+            "Math",
+            "B.G.S",
+            "R.S.T.",
+            "Science",
+            "ICT"
+        ]
+    }
+]

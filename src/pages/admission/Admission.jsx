@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import admission1 from "../../../public/assets/admission/20231206_013402_0000.png"
 import admission2 from "../../../public/assets/admission/20231206_013402_0001.png"
 
 const Admission = () => {
+    const [paymentdata, setPaymnetData] = useState()
+
+    useEffect(()=> {
+        fetch("/payment.json")
+        .then(res=> res.json())
+        .then(data=> setPaymnetData(data))
+    }, [])
+
+    console.log(paymentdata)
     return (
         <div>
             <Helmet>
