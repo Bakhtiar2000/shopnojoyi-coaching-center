@@ -2,114 +2,52 @@
     {
         "_id": 1,
         "division": "11-12 (Science)",
+        "img": "https://i.ibb.co/ysYRjSn/11-12-Science-Routine.png",
         "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "Physics",
-            "Chemistry",
-            "Biology",
-            "ICT"
+            "বাংলা",
+            "ইংরেজি",
+            "গণিত",
+            "পদার্থবিজ্ঞান",
+            "রসায়ন",
+            "জীববিজ্ঞান",
+            "আইসিটি"
         ]
     },
     {
         "_id": 2,
         "division": "11-12 (Commerce)",
+        "img": "https://i.ibb.co/Lz2Djp3/11-12-Commerce-Routine.png",
         "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "Finance",
-            "Hishab nikash",
-            "ICT"
+            "বাংলা",
+            "ইংরেজি",
+            "হিসাববিজ্ঞান",
+            "ফিন্যান্স ও ব্যাংকিং",
+            "আইসিটি"
         ]
     },
     {
         "_id": 3,
-        "division": "11-12 (Arts)",
+        "division": "9-10 (Science)",
+        "img": "https://i.ibb.co/GCrR5ch/9-10-Science-Routine.png",
         "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "Vugo;",
-            "Charukola",
-            "ICT"
+            "বাংলা",
+            "ইংরেজি",
+            "গণিত",
+            "পদার্থবিজ্ঞান",
+            "রসায়ন",
+            "জীববিজ্ঞান"
         ]
     },
     {
         "_id": 4,
-        "division": "9-10 (Science)",
-        "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "Physics",
-            "Chemistry",
-            "Biology",
-            "ICT"
-        ]
-    },
-    {
-        "_id": 5,
         "division": "9-10 (Commerce)",
+        "img": "https://i.ibb.co/x65DrhR/9-10-Commerce-Routine.png",
         "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "Finance",
-            "Hishab nikash",
-            "ICT"
-        ]
-    },
-    {
-        "_id": 6,
-        "division": "9-10 (Arts)",
-        "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "Vugo;",
-            "Charukola",
-            "ICT"
-        ]
-    },
-    {
-        "_id": 7,
-        "division": "8",
-        "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "B.G.S",
-            "R.S.T.",
-            "Science",
-            "ICT"
-        ]
-    },
-    {
-        "_id": 8,
-        "division": "7",
-        "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "B.G.S",
-            "R.S.T.",
-            "Science",
-            "ICT"
-        ]
-    },
-    {
-        "_id": 9,
-        "division": "6",
-        "subjects": [
-            "Bangla",
-            "English",
-            "Math",
-            "B.G.S",
-            "R.S.T.",
-            "Science",
-            "ICT"
+            "বাংলা",
+            "ইংরেজি",
+            "গণিত",
+            "হিসাববিজ্ঞান",
+            "ফিন্যান্স ও ব্যাংকিং"
         ]
     }
 ]

@@ -56,23 +56,29 @@ const Admission = () => {
                     <img className='w-96 sm:w-[520px] lg:w-96 xl:w-[520px] duration-300 border border-[#313238] rounded' src={admission2} alt="" />
                 </div> */}
 
-                <div className='max-w-3xl mx-auto'>
-                    <label className='block mb-1.5'>শ্রেণি বাছাই করো (বিভাগ সহকারে)</label>
-                    <select
-                        onChange={(e) => setSelectedClass(e.target.value)}
-                        className='w-60 rounded outline-none px-2 py-1 border border-black/60'
-                        defaultValue=""
-                    >
-                        <option disabled value=""></option>
-                        {
-                            paymentdata?.map(data => <option key={data?._id}>{data?.division}</option>)
-                        }
-                    </select>
+                <div className='flex justify-center'>
+                    <div>
+                        {/* <label className='block mb-1.5'>শ্রেণি বাছাই করো (বিভাগ সহকারে)</label> */}
+                        <select
+                            onChange={(e) => {
+                                setSelectedClass(e.target.value)
+                                setSelectedSubjects([])
+                            }}
+                            className='w-[280px] rounded outline-none px-2 py-1 border border-black/60'
+                            defaultValue=""
+                        >
+                            <option disabled value="">শ্রেণি বাছাই করো (বিভাগ সহকারে)</option>
+                            {
+                                paymentdata?.map(data => <option key={data?._id}>{data?.division}</option>)
+                            }
+                        </select>
+                    </div>
                 </div>
 
                 {
                     selectedClass !== "" &&
                     <div className='max-w-3xl mx-auto mt-10'>
+                        <img className='w-full md:w-[520px] mx-auto mb-8' src={paymentdata?.find(data => data.division == selectedClass)?.img} alt="Routine" />
                         <label className='block mb-3'>স্বপ্নজয়ীতে তুমি কি কি বিষয় পরতে ইচ্ছুক?</label>
                         <div className='flex flex-wrap gap-5'>
                             {
