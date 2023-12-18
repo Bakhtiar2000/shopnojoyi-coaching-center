@@ -2,7 +2,7 @@
     {
         "_id": 1,
         "division": "11-12 (Science)",
-        "img": "https://i.ibb.co/ysYRjSn/11-12-Science-Routine.png",
+        "img": "https://i.ibb.co/BrQKVMG/Screenshot-2023-12-19-003609.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -26,7 +26,7 @@
     {
         "_id": 2,
         "division": "11-12 (Commerce)",
-        "img": "https://i.ibb.co/Lz2Djp3/11-12-Commerce-Routine.png",
+        "img": "https://i.ibb.co/jhYWTnN/Screenshot-2023-12-19-003642.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -47,8 +47,29 @@
     },
     {
         "_id": 3,
+        "division": "11-12 (Arts)",
+        "img": "https://i.ibb.co/0nRW9KB/Screenshot-2023-12-19-004955.png",
+        "subjects": [
+            "বাংলা",
+            "ইংরেজি",
+            "পরিসংখ্যান",
+            "আইসিটি"
+        ],
+        "payment": {
+            "one_sub": "১০০০",
+            "two_sub": "১৫০০",
+            "three_sub": "২০০০",
+            "four_sub": "২৫০০",
+            "five_sub": "৩০০০",
+            "six_sub": "৩৫০০",
+            "seven_sub": "৪০০০",
+            "eight_sub": "৪৫০০"
+        }
+    },
+    {
+        "_id": 4,
         "division": "9-10 (Science)",
-        "img": "https://i.ibb.co/GCrR5ch/9-10-Science-Routine.png",
+        "img": "https://i.ibb.co/KKCFvdg/Screenshot-2023-12-19-003700.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -69,15 +90,36 @@
         }
     },
     {
-        "_id": 4,
+        "_id": 5,
         "division": "9-10 (Commerce)",
-        "img": "https://i.ibb.co/x65DrhR/9-10-Commerce-Routine.png",
+        "img": "https://i.ibb.co/KXkdn0L/Screenshot-2023-12-19-003719.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
             "গণিত",
             "হিসাববিজ্ঞান",
             "ফিন্যান্স ও ব্যাংকিং"
+        ],
+        "payment": {
+            "one_sub": "১০০০",
+            "two_sub": "১৫০০",
+            "three_sub": "২০০০",
+            "four_sub": "২৫০০",
+            "five_sub": "৩০০০",
+            "six_sub": "৩৫০০",
+            "seven_sub": "৪০০০",
+            "eight_sub": "৪৫০০"
+        }
+    },
+    {
+        "_id": 6,
+        "division": "9-10 (Arts)",
+        "img": "https://i.ibb.co/wdS3HZg/Screenshot-2023-12-19-005017.png",
+        "subjects": [
+            "বাংলা",
+            "ইংরেজি",
+            "গণিত",
+            "সাধারন বিজ্ঞান"
         ],
         "payment": {
             "one_sub": "১০০০",

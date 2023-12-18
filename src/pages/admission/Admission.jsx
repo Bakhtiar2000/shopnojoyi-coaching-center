@@ -80,7 +80,7 @@ const Admission = () => {
                         {
                             selectedSubjects?.length !== 0 &&
                             <div className='rounded border border-title text-title py-2 px-4 text-lg mt-5 w-fit'>
-                                মাসিক হাদিয়া: 
+                                মাসিক বেতন: 
                                 {
                                     selectedSubjects?.length == 1 ?  selectedClassData?.payment?.one_sub: 
                                     selectedSubjects?.length == 2 ?  selectedClassData?.payment?.two_sub: 

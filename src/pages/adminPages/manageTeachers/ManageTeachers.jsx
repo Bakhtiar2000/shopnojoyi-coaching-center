@@ -130,22 +130,26 @@ const ManageTeachers = () => {
                         {/* Classes */}
                         <div className='w-full'>
                             <label className='text-dark text-sm'>Classes taken by the teacher <span className='text-red-500'>*</span></label>
-                            {classes.map((singleClass, index) => (
-                                <div key={singleClass.id} className='flex items-center gap-5 mb-2'>
-                                    <input
-                                        type='text'
-                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.name && 'border border-red-500'}`}
-                                        {...register(`classes[${index}]`)}
-                                    />
-                                    {index === classes.length - 1 && (
-                                        <button onClick={handleIncreaseInputField}
-                                            className='h-10 w-10 rounded-lg flex items-center justify-center'
-                                        >
-                                            <IoMdAddCircleOutline size={24} />
-                                        </button>
-                                    )}
-                                </div>
-                            ))}
+                            <div className='flex flex-wrap items-center gap-3'>
+                            {
+                                classes.map((singleClass, index) => (
+                                    <div key={singleClass.id} className='flex items-center gap-2'>
+                                        <input
+                                            type='text'
+                                            className={`w-44 border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary ${errors.classes && 'border border-red-500'}`}
+                                            {...register(`classes[${index}]`, { required: true })}
+                                        />
+                                        {index === classes.length - 1 && (
+                                            <button onClick={handleIncreaseInputField}
+                                                className='h-8 w-8 rounded-lg flex items-center justify-center'
+                                            >
+                                                <IoMdAddCircleOutline size={24} />
+                                            </button>
+                                        )}
+                                    </div>
+                                ))
+                            }
+                            </div>
                             {
                                 maximumWarning && <p className='text-red-500'>Maximum classes field reached</p>
                             }
@@ -153,7 +157,7 @@ const ManageTeachers = () => {
 
                         {/* Submit */}
                         <input
-                            className="text-center px-3 md:px-5 py-1 md:py-3 bg-primary hover:bg-title duration-300 rounded-lg text-white cursor-pointer"
+                            className="text-center px-3 md:px-5 py-1 md:py-3 bg-primary hover:bg-title duration-300 rounded-lg text-white cursor-pointer mt-5"
                             type="submit"
                             value="Save Changes"
                         />

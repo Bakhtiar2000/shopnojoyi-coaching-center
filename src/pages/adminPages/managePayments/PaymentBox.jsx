@@ -35,14 +35,14 @@ const PaymentBox = ({ pay, refetch }) => {
                 <p>৮ বিষয়: {pay?.payment?.eight_sub}</p>
             </div>
 
-            <div
+            {/* <div
                 onClick={handleUpdate}
                 className='absolute bottom-5 right-14 hidden group-hover:block p-1 text-xl rounded text-green-500 duration-300 shadow hover:shadow-xl cursor-pointer'>
                 <FaRegEdit />
-            </div>
+            </div> */}
             <div
                 onClick={handleDelete}
-                className='absolute bottom-5 right-5 hidden group-hover:block p-1 text-xl rounded text-red-500 duration-300 shadow hover:shadow-xl cursor-pointer'>
+                className='absolute bottom-5 right-5 hidden group-hover:block p-1 text-xl rounded bg-red-500 text-white duration-300 shadow hover:shadow-xl cursor-pointer'>
                 <MdOutlineDelete />
             </div>
         </div>

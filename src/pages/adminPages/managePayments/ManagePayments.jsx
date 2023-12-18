@@ -4,18 +4,43 @@ import PaymentBox from './PaymentBox';
 import { useForm } from 'react-hook-form';
 import { AiOutlinePlus } from 'react-icons/ai';
 import CustomModal from '../../../components/CustomModal';
+import { IoMdAddCircleOutline } from 'react-icons/io';
 
 const ManagePayments = () => {
     const [paymentsData, , refetch] = usePayments();
     const [isPaymentsModalOpen, setIsPaymentsModalOpen] = useState(false)
-    const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm();
+    const [subjects, setSubjects] = useState([{ id: 1, value: "" }]);
+    const [maximumWarning, setMaximumWarning] = useState(false)
+    const { register, handleSubmit, watch, setValue, reset, formState: { errors }} = useForm();
+
+    const handleIncreaseInputField = () => {
+        if (subjects.length < 8) {
+            const newId = subjects.length + 1;
+            setSubjects([...subjects, { id: newId, value: "" }]);
+        }
+        else setMaximumWarning(true)
+    };
 
     const onPaymentsDataSubmit = data => {
         const updateData = {
             img: data?.photo,
-            division: data?.division
+            division: data?.division,
+            subjects: data?.subjects,
+            payment: {
+                one_sub : data?.sub1,
+                two_sub : data?.sub2,
+                three_sub : data?.sub3,
+                four_sub : data?.sub4,
+                five_sub : data?.sub5,
+                six_sub : data?.sub6,
+                seven_sub : data?.sub7,
+                eight_sb : data?.sub8
+            }
         }
         console.log(updateData)
+        reset()
+        setIsPaymentsModalOpen(false)
+        setSubjects([{ id: 1, value: "" }])
     }
     return (
         <div className='m-5 lg:m-10'>
@@ -42,28 +67,129 @@ const ManagePayments = () => {
                         <h3 className="font-bold text-title text-xl mb-2">Add Payment Details</h3>
                         <p className='border-t border-dark mb-5'></p>
 
-                        {/* Class */}
-                        <div className='w-full'>
-                            <label className='text-dark text-sm'>Class name (with division) <span className='text-red-500'>*</span></label>
-                            <input
-                                type='text'
-                                placeholder='e.g. 11-12 (Science)'
-                                {...register("division", { required: true })}
-                                className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.division && 'border border-red-500'}`}
-                            />
+                        <div className='flex items-center gap-3'>
+                            {/* Class */}
+                            <div className='w-full'>
+                                <label className='text-dark text-sm'>Class name (with group) <span className='text-red-500'>*</span></label>
+                                <input
+                                    type='text'
+                                    placeholder='e.g. 11-12 (Science)'
+                                    {...register("division", { required: true })}
+                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.division && 'border border-red-500'}`}
+                                />
+                            </div>
+
+                            {/* image */}
+                            <div className='w-full'>
+                                <label className='text-dark text-sm'>Routine Photo Link <span className='text-red-500'>*</span></label>
+                                <input
+                                    type='text'
+                                    {...register("photo", { required: true })}
+                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
+                                />
+                            </div>
                         </div>
 
-                        {/* image */}
+                        {/* Subjects */}
                         <div className='w-full'>
-                            <label className='text-dark text-sm'>Routine Photo Link <span className='text-red-500'>*</span></label>
-                            <input
-                                type='text'
-                                {...register("photo", { required: true })}
-                                className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
-                            />
+                            <label className='text-dark text-sm'>Subjects <span className='text-red-500'>*</span></label>
+                            <div className='flex flex-wrap gap-2'>
+                                {
+                                    subjects.map((sub, index) => (
+                                        <div key={sub.id} className='flex items-center gap-2'>
+                                            <input
+                                                type='text'
+                                                className={`w-24 inline border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary ${errors.subjects && 'border border-red-500'}`}
+                                                {...register(`subjects[${index}]`, { required: true })}
+                                            />
+                                            {index === subjects.length - 1 && (
+                                                <button onClick={handleIncreaseInputField}
+                                                    className='h-8 w-8 rounded-lg flex items-center justify-center -ml-2'
+                                                >
+                                                    <IoMdAddCircleOutline size={24} />
+                                                </button>
+                                            )}
+                                        </div>
+                                    ))}
+                            </div>
+                            {
+                                maximumWarning && <p className='text-red-500'>Maximum subjects field reached</p>
+                            }
                         </div>
 
-                        
+                        {/* Payments */}
+                        <div className='mt-5'>
+                            <h4 className='text-lg mb-2'>Payment per subject</h4>
+                            <div className='grid grid-cols-4 gap-2'>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>1 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub1", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub1 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>2 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub2", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub2 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>3 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub3", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub3 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>4 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub4", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub4 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className='grid grid-cols-4 gap-2'>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>5 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub5", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub5 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>6 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub6", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub6 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>7 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub7", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub7 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                                <div className='w-full'>
+                                    <label className='text-dark text-sm'>8 subject <span className='text-red-500'>*</span></label>
+                                    <input
+                                        type='text'
+                                        {...register("sub8", { required: true })}
+                                        className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.sub8 && 'border border-red-500'}`}
+                                    />
+                                </div>
+                            </div>
+                        </div>
 
                         {/* Submit */}
                         <input
