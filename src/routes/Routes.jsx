@@ -14,9 +14,9 @@ import AdminHome from '../pages/adminPages/adminHome/AdminHome';
 import ManageTeachers from '../pages/adminPages/manageTeachers/ManageTeachers';
 import ManagePrograms from '../pages/adminPages/managePrograms/ManagePrograms';
 import ManageGallery from '../pages/adminPages/manageGallery/ManageGallery';
-import ManageReviews from '../pages/adminPages/manageReviews/ManageReviews';
 import ChangePassword from '../pages/adminPages/changePassword/ChangePassword';
 import ManageLectures from '../pages/adminPages/manageLectures/ManageLectures';
+import ManagePayments from '../pages/adminPages/managePayments/ManagePayments';
 
 const router= createBrowserRouter([
         {
@@ -80,8 +80,8 @@ const router= createBrowserRouter([
                     element: <ManageLectures></ManageLectures>
                 },
                 {
-                    path: "manageReviews",
-                    element: <ManageReviews></ManageReviews>
+                    path: "managePayments",
+                    element: <ManagePayments></ManagePayments>
                 },
                 {
                     path: "changePassword",

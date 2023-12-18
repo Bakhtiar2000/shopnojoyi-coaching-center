@@ -54,7 +54,7 @@ const ManageGallery = () => {
 
             {
                 galleryData.length < 4 ?
-                < button onClick={() => setIsGalleryModalOpen(true)} className='p-5 rounded-lg w-[600px] h-[300px] border border-dashed border-black hover:shadow-xl duration-300 flex justify-center items-center text-5xl mx-auto mt-10'>
+                < button onClick={() => setIsGalleryModalOpen(true)} className='p-5 rounded-lg w-96 sm:w-[512px] md:w-[600px] h-48 sm:h-64 md:h-[300px] border border-dashed border-black hover:shadow-xl duration-300 flex justify-center items-center text-5xl mx-auto mt-10'>
                     <AiOutlinePlus />
                 </button>: 
                 <p className='text-center text-lg mt-10 text-red-500'>You can have maximum four photos here</p>

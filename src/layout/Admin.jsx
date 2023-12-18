@@ -6,6 +6,7 @@ import { IoMdPerson, IoMdPhotos, IoIosLogOut } from "react-icons/io";
 import { GrGallery } from "react-icons/gr";
 import { SiGoogleclassroom } from "react-icons/si"
 import { RiLockPasswordFill } from "react-icons/ri"
+import { FaMoneyCheck  } from "react-icons/fa";
 import logo from "/logo.png"
 import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet';
@@ -134,7 +135,7 @@ const Admin = () => {
                                 <li><ActiveLink to='/admin/managePrograms'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><IoMdPhotos /> Manage Program Photos</div></ActiveLink></li>
                                 <li><ActiveLink to='/admin/manageGallery'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><GrGallery /> Manage Gallery Photos</div></ActiveLink></li>
                                 <li><ActiveLink to='/admin/manageLectures'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><SiGoogleclassroom /> Manage Online Lectures</div></ActiveLink></li>
-                                {/* <li><ActiveLink to='/admin/manageReviews'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><MdRateReview /> Manage Reviews</div></ActiveLink></li> */}
+                                <li><ActiveLink to='/admin/managePayments'><div className='flex items-center gap-2 text-sm sm:text-base duration-300'><FaMoneyCheck  /> Manage Payments</div></ActiveLink></li>
 
                                 <div className="border-t border-primary m-3"></div>
 

@@ -2,19 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import { FaPlus } from "react-icons/fa6";
+import usePayments from '../../hooks/usepayments';
 
 
 const Admission = () => {
-    const [paymentdata, setPaymnetData] = useState([])
+    const [paymentsdata] = usePayments()
     const [selectedClass, setSelectedClass] = useState("")
     const [selectedSubjects, setSelectedSubjects] = useState([])
-    const classWiseSubjects = paymentdata?.find(data => data.division == selectedClass)?.subjects || []
-
-    useEffect(() => {
-        fetch("/payment.json")
-            .then(res => res.json())
-            .then(data => setPaymnetData(data))
-    }, [])
+    const selectedClassData= paymentsdata?.find(data => data.division == selectedClass)
+    const classWiseSubjects = paymentsdata?.find(data => data.division == selectedClass)?.subjects || []
 
     const handleSubjectSelection = sub => {
         const updatedSubjects = [...selectedSubjects];
@@ -28,18 +24,6 @@ const Admission = () => {
 
         setSelectedSubjects(updatedSubjects);
     };
-
-    const payment =
-        selectedSubjects.length == 1 ? "১০০০" :
-            selectedSubjects.length == 2 ? "১৫০০" :
-                selectedSubjects.length == 3 ? "২০০০" :
-                    selectedSubjects.length == 4 ? "২৫০০" :
-                        selectedSubjects.length == 5 ? "৩০০০" :
-                            selectedSubjects.length == 6 ? "৩৫০০" :
-                                selectedSubjects.length == 7 ? "৪০০০" :
-                                    ""
-
-
 
     return (
         <div>
@@ -69,7 +53,7 @@ const Admission = () => {
                         >
                             <option disabled value="">শ্রেণি বাছাই করো (বিভাগ সহকারে)</option>
                             {
-                                paymentdata?.map(data => <option key={data?._id}>{data?.division}</option>)
+                                paymentsdata?.map(data => <option key={data?._id}>{data?.division}</option>)
                             }
                         </select>
                     </div>
@@ -78,14 +62,14 @@ const Admission = () => {
                 {
                     selectedClass !== "" &&
                     <div className='max-w-3xl mx-auto mt-10'>
-                        <img className='w-full md:w-[520px] mx-auto mb-8' src={paymentdata?.find(data => data.division == selectedClass)?.img} alt="Routine" />
+                        <img className='w-full md:w-[520px] mx-auto mb-8' src={selectedClassData?.img} alt="Routine" />
                         <label className='block mb-3'>স্বপ্নজয়ীতে তুমি কি কি বিষয় পরতে ইচ্ছুক?</label>
                         <div className='flex flex-wrap gap-5'>
                             {
                                 classWiseSubjects?.map((sub, index) =>
                                     <button
                                         key={index}
-                                        className={`rounded-full w-fit flex items-center gap-2 py-1 px-3 border border-title  ${selectedSubjects.includes(sub) ? "bg-primary/40" : "bg-primary/10"}`}
+                                        className={`rounded-full w-fit flex items-center gap-2 py-1 px-3 border border-title  ${selectedSubjects.includes(sub) ? "bg-title text-white" : "bg-primary/10 text-black"}`}
                                         onClick={() => handleSubjectSelection(sub)}
                                     >
                                         <FaPlus /> {sub}
@@ -94,8 +78,21 @@ const Admission = () => {
                             }
                         </div>
                         {
-                            selectedSubjects.length !== 0 &&
-                            <div className='rounded border border-title text-title py-2 px-4 text-lg mt-5 w-fit'>মাসিক হাদিয়া: {payment}৳</div>
+                            selectedSubjects?.length !== 0 &&
+                            <div className='rounded border border-title text-title py-2 px-4 text-lg mt-5 w-fit'>
+                                মাসিক হাদিয়া: 
+                                {
+                                    selectedSubjects?.length == 1 ?  selectedClassData?.payment?.one_sub: 
+                                    selectedSubjects?.length == 2 ?  selectedClassData?.payment?.two_sub: 
+                                    selectedSubjects?.length == 3 ?  selectedClassData?.payment?.three_sub: 
+                                    selectedSubjects?.length == 4 ?  selectedClassData?.payment?.four_sub: 
+                                    selectedSubjects?.length == 5 ?  selectedClassData?.payment?.five_sub: 
+                                    selectedSubjects?.length == 6 ?  selectedClassData?.payment?.six_sub: 
+                                    selectedSubjects?.length == 7 ?  selectedClassData?.payment?.seven_sub: 
+                                    selectedSubjects?.length == 8 ?  selectedClassData?.payment?.eight_sub: 
+                                    ""
+                                }৳
+                            </div>
                         }
                     </div>
                 }

@@ -4,6 +4,7 @@ import OurTeachers from './OurTeachers';
 import Pictures from './Pictures';
 import Reviews from './Reviews';
 import { Helmet } from 'react-helmet';
+import LectureDemo from './LectureDemo';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <OurTeachers />
             <Pictures />
             <Reviews />
+            {/* <LectureDemo /> */}
         </div>
     );
 };

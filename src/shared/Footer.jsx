@@ -23,8 +23,8 @@ const Footer = () => {
                   <header className='text-xl text-primary mb-1'>Quick Links</header> 
                   <p className='border rounded border-primary mb-2 w-16'></p>
                   <Link to="/aboutUs" className="hover:underline hover:text-title duration-300">About us</Link> 
-                  <Link to="/programs" className="hover:underline hover:text-title duration-300">Our Programs</Link> 
-                  <Link to="/teachers" className="hover:underline hover:text-title duration-300">Our Teachers</Link> 
+                  <Link to="/admission" className="hover:underline hover:text-title duration-300">Admission</Link> 
+                  <Link to="/lectures" className="hover:underline hover:text-title duration-300">Lectures</Link> 
                   <Link to="/contact" className="hover:underline hover:text-title duration-300">Contact</Link>
                 </div> 
 
