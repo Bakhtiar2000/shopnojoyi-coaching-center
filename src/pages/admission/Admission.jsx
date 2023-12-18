@@ -5,16 +5,41 @@ import { FaPlus } from "react-icons/fa6";
 
 
 const Admission = () => {
-    const [paymentdata, setPaymnetData] = useState()
+    const [paymentdata, setPaymnetData] = useState([])
     const [selectedClass, setSelectedClass] = useState("")
-    const selectedSubjects = paymentdata?.filter(data => data.division == selectedClass)[0]?.subjects
-    console.log(selectedSubjects)
+    const [selectedSubjects, setSelectedSubjects] = useState([])
+    const classWiseSubjects = paymentdata?.find(data => data.division == selectedClass)?.subjects || []
 
     useEffect(() => {
         fetch("/payment.json")
             .then(res => res.json())
             .then(data => setPaymnetData(data))
     }, [])
+
+    const handleSubjectSelection = sub => {
+        const updatedSubjects = [...selectedSubjects];
+        const index = updatedSubjects.indexOf(sub);
+
+        if (index !== -1) {
+            updatedSubjects.splice(index, 1);
+        } else {
+            updatedSubjects.push(sub);
+        }
+
+        setSelectedSubjects(updatedSubjects);
+    };
+
+    const payment =
+        selectedSubjects.length == 1 ? "১০০০" :
+            selectedSubjects.length == 2 ? "১৫০০" :
+                selectedSubjects.length == 3 ? "২০০০" :
+                    selectedSubjects.length == 4 ? "২৫০০" :
+                        selectedSubjects.length == 5 ? "৩০০০" :
+                            selectedSubjects.length == 6 ? "৩৫০০" :
+                                selectedSubjects.length == 7 ? "৪০০০" :
+                                    ""
+
+
 
     return (
         <div>
@@ -31,7 +56,7 @@ const Admission = () => {
                     <img className='w-96 sm:w-[520px] lg:w-96 xl:w-[520px] duration-300 border border-[#313238] rounded' src={admission2} alt="" />
                 </div> */}
 
-                <div className='max-w-4xl mx-auto'>
+                <div className='max-w-3xl mx-auto'>
                     <label className='block mb-1.5'>শ্রেণি বাছাই করো (বিভাগ সহকারে)</label>
                     <select
                         onChange={(e) => setSelectedClass(e.target.value)}
@@ -47,17 +72,25 @@ const Admission = () => {
 
                 {
                     selectedClass !== "" &&
-                    <div className='max-w-4xl mx-auto mt-10'>
+                    <div className='max-w-3xl mx-auto mt-10'>
                         <label className='block mb-3'>স্বপ্নজয়ীতে তুমি কি কি বিষয় পরতে ইচ্ছুক?</label>
                         <div className='flex flex-wrap gap-5'>
                             {
-                                selectedSubjects?.map(sub =>
-                                    <button className='rounded-full w-fit flex items-center gap-2 py-1 px-3 border border-title bg-primary/10'><FaPlus /> {sub}</button>
+                                classWiseSubjects?.map((sub, index) =>
+                                    <button
+                                        key={index}
+                                        className={`rounded-full w-fit flex items-center gap-2 py-1 px-3 border border-title  ${selectedSubjects.includes(sub) ? "bg-primary/40" : "bg-primary/10"}`}
+                                        onClick={() => handleSubjectSelection(sub)}
+                                    >
+                                        <FaPlus /> {sub}
+                                    </button>
                                 )
                             }
                         </div>
-
-                        <div className='rounded border border-title text-title py-2 px-4 text-lg mt-5 w-fit'>মাসিক হাদিয়া: ২০০০৳</div>
+                        {
+                            selectedSubjects.length !== 0 &&
+                            <div className='rounded border border-title text-title py-2 px-4 text-lg mt-5 w-fit'>মাসিক হাদিয়া: {payment}৳</div>
+                        }
                     </div>
                 }
 
