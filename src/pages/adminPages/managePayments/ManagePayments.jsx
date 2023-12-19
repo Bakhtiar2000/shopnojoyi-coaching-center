@@ -5,8 +5,11 @@ import { useForm } from 'react-hook-form';
 import { AiOutlinePlus } from 'react-icons/ai';
 import CustomModal from '../../../components/CustomModal';
 import { IoMdAddCircleOutline } from 'react-icons/io';
+import Swal from 'sweetalert2';
+import useAxios from '../../../hooks/useAxios';
 
 const ManagePayments = () => {
+    const [axiosSecure] = useAxios()
     const [paymentsData, , refetch] = usePayments();
     const [isPaymentsModalOpen, setIsPaymentsModalOpen] = useState(false)
     const [subjects, setSubjects] = useState([{ id: 1, value: "" }]);
@@ -34,13 +37,31 @@ const ManagePayments = () => {
                 five_sub : data?.sub5,
                 six_sub : data?.sub6,
                 seven_sub : data?.sub7,
-                eight_sb : data?.sub8
+                eight_sub : data?.sub8
             }
         }
-        console.log(updateData)
-        reset()
-        setIsPaymentsModalOpen(false)
-        setSubjects([{ id: 1, value: "" }])
+        axiosSecure.post('/payments', updateData)
+            .then(res => {
+                if (res.status === 200) {
+                    Swal.fire({
+                        title: 'Teacher added successfully',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                    setIsPaymentsModalOpen(false)
+                    setMaximumWarning(false)
+                    setSubjects([{ id: 1, value: "" }])
+                    reset()
+                    refetch()
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div className='m-5 lg:m-10'>

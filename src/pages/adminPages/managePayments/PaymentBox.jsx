@@ -1,15 +1,39 @@
 import React from 'react';
 import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineDelete } from 'react-icons/md';
+import useAxios from '../../../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const PaymentBox = ({ pay, refetch }) => {
-
-    const handleUpdate = () => {
-        console.log(pay?._id)
-    }
-
+    const [axiosSecure] = useAxios()
     const handleDelete = () => {
-        console.log(pay?._id)
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure
+                    .delete(`/payments/${pay?._id}`)
+                    .then((res) => {
+                        if (res.status == 200) {
+                            refetch()
+                            Swal.fire({
+                                icon: "success",
+                                title: "Deleted Successfully!",
+                                showConfirmButton: false,
+                                timer: 1500,
+                            });
+
+                        }
+                    })
+                    .catch((err) => console.log(err));
+
+            }
+        });
     }
     return (
         <div className='relative group p-5 rounded-lg hover:bg-title/10 hover:shadow-xl duration-300 mb-5'>
