@@ -19,7 +19,7 @@ const Admin = () => {
     const [error, setError] = useState('');
     const [wrongAttempts, setWrongAttempts] = useState(0);
     const [accessDenied, setAccessDenied] = useState(false);
-    const denialPeriod = 30 * 1000; // 30 seconds in milliseconds
+    const denialPeriod = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
     const navigate = useNavigate()
 
     axiosSecure.get(`password?token=${import.meta.env.VITE_Token}`)
@@ -93,7 +93,7 @@ const Admin = () => {
                                     error &&
                                     <>
                                         <p className='text-red-500 mt-2'>{error}</p>
-                                        <p className='text-title bg-red-50 w-52 md:w-64 lg:w-80 rounded p-2 mt-2'>N.B. You cannot access admin route for 3 days after 5 continuous wrong attempts.</p>
+                                        <p className='text-title bg-red-50 w-52 md:w-64 lg:w-80 rounded p-2 mt-2'>N.B. You cannot access admin route for 3 hours after 5 continuous wrong attempts.</p>
                                     </>
                                 }
 

@@ -47,7 +47,7 @@ const Admission = () => {
                                 setSelectedClass(e.target.value)
                                 setSelectedSubjects([])
                             }}
-                            className='w-[280px] rounded outline-none px-2 py-1 border border-black/60'
+                            className='w-[280px] rounded outline-none px-2 py-1 border border-black/60 cursor-pointer'
                             defaultValue=""
                         >
                             <option disabled value="">শ্রেণি বাছাই করো (বিভাগ সহকারে)</option>
