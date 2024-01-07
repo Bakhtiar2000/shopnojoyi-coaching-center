@@ -72,14 +72,15 @@ const ManageGallery = () => {
                         <p className='border-t border-dark mb-5'></p>
 
                         {/* image */}
-                        <div className='w-full'>
+                        <div className='w-full mb-3'>
                             <label className='text-dark text-sm'>Photo Link <span className='text-red-500'>*</span></label>
                             <input
                                 type='text'
                                 placeholder='2:1 photo ratio is preferred'
                                 {...register("photo", { required: true })}
-                                className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
+                                className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary ${errors.photo && 'border border-red-500'}`}
                             />
+                            <p className='text-end sm:text-start text-sm my-1 ml-1'>Free upload sites: <a className='text-blue-500 underline' href="https://imgbb.com/" target="_blank">Imgbb</a>, <a className='text-blue-500 underline' href="https://drive.google.com/drive/my-drive" target="_blank">GDrive</a> etc.</p>
                         </div>
 
                         {/* Description */}

@@ -6,6 +6,8 @@ import CustomModal from '../../../components/CustomModal';
 import { useForm } from 'react-hook-form';
 import useAxios from '../../../hooks/useAxios';
 import Swal from 'sweetalert2';
+import guideImg from "../../../../public/assets/admission/video link guide.png"
+import SingleLecture from '../../lectures/SingleLecture';
 
 const ManageLectures = () => {
     const [axiosSecure] = useAxios()
@@ -33,6 +35,7 @@ const ManageLectures = () => {
                         }
                     })
                     setIsLectureModalOpen(false)
+                    setChangeField(false)
                     reset()
                     refetch()
                 }
@@ -42,12 +45,6 @@ const ManageLectures = () => {
             })
     }
 
-    const mathLecture = lecturesData.filter(lecture => lecture.playlist === "Math")
-    const chemistryLecture = lecturesData.filter(lecture => lecture.playlist === "Chemistry")
-    const englishLecture = lecturesData.filter(lecture => lecture.playlist === "English")
-    const financeLecture = lecturesData.filter(lecture => lecture.playlist === "Finance & Banking")
-    const ictLecture = lecturesData.filter(lecture => lecture.playlist === "I.C.T")
-
     const playlists = [...new Set(lecturesData.map(item => item?.playlist))];
 
     return (
@@ -55,55 +52,9 @@ const ManageLectures = () => {
             <h2 className='text-3xl sm:text-4xl md:text-5xl text-center mt-10 text-title font-semibold'>Manage Lectures</h2>
 
             <div>
-                {/* Math */}
-                <div className='mt-10 bg-title/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📐 গণিত</h2>
-                    <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
-                        {
-                            mathLecture?.map(lecture => <LectureBox key={lecture?._id} lecture={lecture} refetch={refetch}></LectureBox>)
-                        }
-                    </div>
-                </div>
-
-                {/* English */}
-                <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📖 ইংরেজি</h2>
-                    <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
-                        {
-                            englishLecture?.map(lecture => <LectureBox key={lecture?._id} lecture={lecture} refetch={refetch}></LectureBox>)
-                        }
-                    </div>
-                </div>
-
-                {/* Finance & Banking */}
-                <div className='mt-10 bg-bg/10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>📊 ফাইন্যান্স এন্ড ব্যাংকিং</h2>
-                    <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
-                        {
-                            financeLecture?.map(lecture => <LectureBox key={lecture?._id} lecture={lecture} refetch={refetch}></LectureBox>)
-                        }
-                    </div>
-                </div>
-
-                {/* Chemistry */}
-                <div className='mt-10 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>🧪 রসায়ন</h2>
-                    <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
-                        {
-                            chemistryLecture?.map(lecture => <LectureBox key={lecture?._id} lecture={lecture} refetch={refetch}></LectureBox>)
-                        }
-                    </div>
-                </div>
-
-                {/* ICT */}
-                <div className='mt-10 bg-primary/5 p-3 sm:p-5 lg:p-8 w-fit mx-auto'>
-                    <h2 className='text-2xl sm:text-3xl md:text-4xl text-title font-semibold mb-6 md:mb-10'>💻 আই.সি.টি.</h2>
-                    <div className='grid 2xl:grid-cols-2 gap-6 md:gap-10'>
-                        {
-                            ictLecture?.map(lecture => <LectureBox key={lecture?._id} lecture={lecture} refetch={refetch}></LectureBox>)
-                        }
-                    </div>
-                </div>
+                {
+                    playlists.map((playlist, index) => <SingleLecture key={index} playlist={playlist} refetch={refetch} from="manageLectures"></SingleLecture>)
+                }
             </div>
 
             < button onClick={() => setIsLectureModalOpen(true)} className='p-5 rounded-lg w-[320px] sm:w-[400px] md:w-[480px] lg:w-[560px] xl:w-[640px] h-[180px] sm:h-[225px] md:h-[270px] lg:h-[315px] xl:h-[360px] border border-dashed border-black hover:shadow-xl duration-300 flex justify-center items-center text-5xl mx-auto mt-10'>
@@ -143,7 +94,10 @@ const ManageLectures = () => {
                             </div>
                         </div>
                         {/* Guide */}
-                        <p className='rounded p-3 bg-primary/20 my-3 text-sm'><span className='text-red-500'>Guide for finding accurate youtube video link:</span> Click share option below the video in youtube. Then there will be an option named "embed". Click it and you'll see a code. In the code, src will be written (2nd or 3rd line). src contains a link inside double quotation (""). Copy the full link and paste in video link input box above.</p>
+                        <div className='rounded p-3 bg-primary/20 my-3 text-sm'>
+                            <p ><span className='text-red-500'>Guide for finding accurate youtube video link:</span> Click share option below the video in youtube. Then there will be an option named "embed". Click it and you'll see a code. In the code, src will be written (2nd or 3rd line). src contains a link inside double quotation (""). Copy the full link and paste in video link input box above.</p>
+                            <img className="mx-auto mt-3" src={guideImg} alt="Guide Image" />
+                        </div>
 
                         {/* Playlist */}
                         <div className='mb-3'>
