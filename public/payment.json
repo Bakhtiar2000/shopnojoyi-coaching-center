@@ -2,7 +2,6 @@
     {
         "_id": 1,
         "division": "11-12 (Science)",
-        "img": "https://i.ibb.co/BrQKVMG/Screenshot-2023-12-19-003609.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -26,7 +25,6 @@
     {
         "_id": 2,
         "division": "11-12 (Commerce)",
-        "img": "https://i.ibb.co/jhYWTnN/Screenshot-2023-12-19-003642.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -48,7 +46,6 @@
     {
         "_id": 3,
         "division": "11-12 (Arts)",
-        "img": "https://i.ibb.co/0nRW9KB/Screenshot-2023-12-19-004955.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -69,7 +66,6 @@
     {
         "_id": 4,
         "division": "9-10 (Science)",
-        "img": "https://i.ibb.co/KKCFvdg/Screenshot-2023-12-19-003700.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -92,7 +88,6 @@
     {
         "_id": 5,
         "division": "9-10 (Commerce)",
-        "img": "https://i.ibb.co/KXkdn0L/Screenshot-2023-12-19-003719.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",
@@ -114,7 +109,6 @@
     {
         "_id": 6,
         "division": "9-10 (Arts)",
-        "img": "https://i.ibb.co/wdS3HZg/Screenshot-2023-12-19-005017.png",
         "subjects": [
             "বাংলা",
             "ইংরেজি",

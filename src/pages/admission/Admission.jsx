@@ -9,7 +9,7 @@ const Admission = () => {
     const [paymentsdata] = usePayments()
     const [selectedClass, setSelectedClass] = useState("")
     const [selectedSubjects, setSelectedSubjects] = useState([])
-    const selectedClassData= paymentsdata?.find(data => data.division == selectedClass)
+    const selectedClassData = paymentsdata?.find(data => data.division == selectedClass)
     const classWiseSubjects = paymentsdata?.find(data => data.division == selectedClass)?.subjects || []
 
     const handleSubjectSelection = sub => {
@@ -42,7 +42,6 @@ const Admission = () => {
 
                 <div className='flex justify-center'>
                     <div>
-                        {/* <label className='block mb-1.5'>শ্রেণি বাছাই করো (বিভাগ সহকারে)</label> */}
                         <select
                             onChange={(e) => {
                                 setSelectedClass(e.target.value)
@@ -62,7 +61,6 @@ const Admission = () => {
                 {
                     selectedClass !== "" &&
                     <div className='max-w-3xl mx-auto mt-10'>
-                        <img className='w-full md:w-[520px] mx-auto mb-8' src={selectedClassData?.img} alt="Routine" />
                         <label className='block mb-3'>স্বপ্নজয়ীতে তুমি কি কি বিষয় পরতে ইচ্ছুক?</label>
                         <div className='flex flex-wrap gap-5'>
                             {
@@ -80,17 +78,17 @@ const Admission = () => {
                         {
                             selectedSubjects?.length !== 0 &&
                             <div className='rounded border border-title text-title py-2 px-4 text-lg mt-5 w-fit'>
-                                মাসিক বেতন: 
+                                মাসিক বেতন: {" "}
                                 {
-                                    selectedSubjects?.length == 1 ?  selectedClassData?.payment?.one_sub: 
-                                    selectedSubjects?.length == 2 ?  selectedClassData?.payment?.two_sub: 
-                                    selectedSubjects?.length == 3 ?  selectedClassData?.payment?.three_sub: 
-                                    selectedSubjects?.length == 4 ?  selectedClassData?.payment?.four_sub: 
-                                    selectedSubjects?.length == 5 ?  selectedClassData?.payment?.five_sub: 
-                                    selectedSubjects?.length == 6 ?  selectedClassData?.payment?.six_sub: 
-                                    selectedSubjects?.length == 7 ?  selectedClassData?.payment?.seven_sub: 
-                                    selectedSubjects?.length == 8 ?  selectedClassData?.payment?.eight_sub: 
-                                    ""
+                                    selectedSubjects?.length == 1 ? selectedClassData?.payment?.one_sub :
+                                        selectedSubjects?.length == 2 ? selectedClassData?.payment?.two_sub :
+                                            selectedSubjects?.length == 3 ? selectedClassData?.payment?.three_sub :
+                                                selectedSubjects?.length == 4 ? selectedClassData?.payment?.four_sub :
+                                                    selectedSubjects?.length == 5 ? selectedClassData?.payment?.five_sub :
+                                                        selectedSubjects?.length == 6 ? selectedClassData?.payment?.six_sub :
+                                                            selectedSubjects?.length == 7 ? selectedClassData?.payment?.seven_sub :
+                                                                selectedSubjects?.length == 8 ? selectedClassData?.payment?.eight_sub :
+                                                                    ""
                                 }৳
                             </div>
                         }

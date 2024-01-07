@@ -26,7 +26,6 @@ const ManagePayments = () => {
 
     const onPaymentsDataSubmit = data => {
         const updateData = {
-            img: data?.photo,
             division: data?.division,
             subjects: data?.subjects,
             payment: {
@@ -97,16 +96,6 @@ const ManagePayments = () => {
                                     placeholder='e.g. 11-12 (Science)'
                                     {...register("division", { required: true })}
                                     className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.division && 'border border-red-500'}`}
-                                />
-                            </div>
-
-                            {/* image */}
-                            <div className='w-full'>
-                                <label className='text-dark text-sm'>Routine Photo Link <span className='text-red-500'>*</span></label>
-                                <input
-                                    type='text'
-                                    {...register("photo", { required: true })}
-                                    className={`w-full border text-black bg-white border-dark/40 p-2 rounded-md focus:outline-none focus:border-primary mb-3 ${errors.photo && 'border border-red-500'}`}
                                 />
                             </div>
                         </div>
